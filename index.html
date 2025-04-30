@@ -174,12 +174,13 @@
             termed <b>compositional causal reasoning (CCR)</b>: 
             the ability to infer how causal measures compose 
             and, equivalently, how causal quantities propagate 
-            through graphs. <br>
+            through graphs. <br><br>
 
-            This benchmark dataset is designed to measure CCR at <b>all three levels of Pearl's Causal Hierarchy</b>: (1) associational, (2) interventional, and (3) counterfactual. 
-            Additionally, we measure the <b>compositional consistency</b> of causal reasoning – if two causal quantities are equal in theory, the LM should infer that they are indeed equal. <br>
+            This benchmark is designed to measure CCR at <b>all three levels of Pearl's Causal Hierarchy</b>: (1) associational, (2) interventional, and (3) counterfactual. 
+            Additionally, we measure the <b>compositional consistency</b> of causal reasoning – if two causal quantities are equal in theory, the LM should infer that they are indeed equal. <br><br>
             
-            Using the recommended evaluation pipeline for this benchmark allows for the classification of LM behavior according to a taxonomy of reasoners: 
+            Using the recommended evaluation pipeline for this benchmark allows for the classification of LM behavior according to the <b>taxonomy of reasoners</b> introduced in 
+            <a href="https://arxiv.org/abs/2503.04556" target="_blank">Maasch et al. 2025</a>, facilitating downstream error analysis: 
             (1) valid-consistent, (2) valid-inconsistent, (3) invalid-consistent, and (4) invalid-inconsistent.
           </p>
         </div>
@@ -199,7 +200,7 @@
             <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
               <li><b>Reasoning vs training data recall.</b> Completely fictitious world models help prevent the conflation of recall and reasoning. Variables and their causal relations have no real-world counterparts, ensuring that they were never seen by the model during training.
               </li>
-              <li><b>Reasoning vs in-context recall.</b> Compositional consistency evaluation helps disentangle in-context recall (e.g., extraction of relations directly from the context prompt) from reasoning (e.g., correctly inferring distal causal relationships that were never directly stated in the context prompt).
+              <li><b>Reasoning vs in-context recall.</b> Compositional consistency evaluation helps disentangle in-context recall (e.g., extraction of relations directly from the context prompt) from reasoning (e.g., correctly inferring distal causal relationships that were never directly stated in the causal context prompt).
               </li>
               <li><b>Causal reasoning vs numeracy.</b> This benchmark contains both quantitative and qualitative CCR tasks (i.e., those requiring and not requiring numerical understanding, such as ordering numbers by magnitude). If an LM does significantly better on qualitative tasks, this could indicate poor numeracy as a root of failure on quantitative CCR tasks.
               </li>

@@ -167,29 +167,94 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3">Benchmark overview</h2>
         <div class="content has-text-justified">
           <p>
             Causal reasoning and compositional reasoning are 
             two core aspirations in generative AI. Measuring 
             the extent of these behaviors requires principled 
             evaluation methods. We explore a unified perspective that considers both behaviors simultaneously, 
-            termed compositional causal reasoning (CCR): 
+            termed <b>compositional causal reasoning (CCR)</b>: 
             the ability to infer how causal measures compose 
             and, equivalently, how causal quantities propagate 
-            through graphs. We instantiate a framework for 
-            the systematic evaluation of CCR for the average 
-            treatment effect and the probability of necessity 
-            and sufficiency. As proof of concept, we demonstrate the design of CCR tasks for language models in the LLama, Phi, and GPT families. On 
-            a math word problem, our framework revealed 
-            a range of taxonomically distinct error patterns. 
-            Additionally, CCR errors increased with the complexity of causal paths for all models except o1.
+            through graphs.
           </p>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Procedure -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Disentangling signal from noise in reasoning evaluation</h2>
+        <div class="content has-text-justified">
+          <p>
+            <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
+              <li><b>Reasoning vs training data recall.</b> Completely fictitious world models help prevent the conflation of recall and reasoning. Variables and their causal relations have no real-world counterparts, ensuring that they were never seen by the model during training.
+              </li>
+              <li><b>Reasoning vs in-context recall./b> Compositional consistency evaluation helps disentangle in-context recall (e.g., extraction of relations directly from the context prompt) from reasoning (e.g., correctly inferring distal causal relationships that were never directly stated in the context prompt).
+              </li>
+              <li><b>Causal reasoning vs numeracy.</b> This benchmark contains both quantitative and qualitative CCR tasks (i.e., those requiring and not requiring numerical understanding, such as ordering numbers by magnitude). If an LM does significantly better on qualitative tasks, this could indicate poor numeracy as a root of failure on quantitative CCR tasks.
+              </li>
+              <li></li>
+              <li></li>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Procedure -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Three levels of evaluation</h2>
+        <div class="content has-text-justified">
+          <p>
+            <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
+              <li><b>Associational.</b> Theta(true_factual,pred_factual) for theta in {F1,precision,recall,accuracy,…}.
+              </li>
+              <li><b>Interventional.</b> Theta(true_interv1,pred_interv1), F1(true_interv0,pred_interv0) for theta in {F1,precision,recall,accuracy,…}.</li>
+              <li><b>Counterfactual.</b> Causal reasoning. External validity RAE PNS using both pred_interv1 and pred_interv0. Compositional causal reasoning. Internal consistency and external validity of compositions.</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Procedure -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Procedure</h2>
+        <div class="content has-text-justified">
+          <p>
+            <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
+              <li><b>Causal world model.</b> Define a small, fictional world corresponding to a randomly generated causal graph. This will be the causal world model for the LM to reason over. The structural causal model defining our tiny, fictitious world is comprised of exogenous noise variables, endogenous variables, and causal functions (logical operators and, or).</li>
+              <li>Causal context prompt. Construct a verbal description of the world model. This verbal description — our “causal context prompt” — contains all pertinent details needed for the LM to infer the world model, as well as extraneous details not needed to solve the CCR task.</li>
+              <li><b>Sampling.</b> Randomly sample exogenous variables and extraneous variables and compute true endogenous variable values. We can sample from observational distribution p or from interventional distributions p'_{0} and p'_{1}. The two interventional distributions can be used to estimate counterfactual measures.</li>
+              <li><b>Factual query prompts.</b> Construct factual queries using observational data sampled from p, which test for relation extraction and reasoning at the associational level of the PCH.</li>
+              <li><b>Counterfactual query pairs.</b> Construct paired interventional queries corresponding to p'_{0} and p'_{1}, which together constitute our counterfactual query pairs. These are used to test for reasoning at the interventional and counterfactual rungs of the PCH.</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- End paper abstract -->
 
 
@@ -234,9 +299,9 @@
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title">Paper Slides</h2>
+      <h2 class="title">Paper slides</h2>
 
-      <iframe  src="https://jmaasch.github.io/data/ccr_slides.pdf" width="100%" height="550">
+      <iframe  src="https://jmaasch.github.io/data/ccr_slides.pdf" width="60%" height="550">
           </iframe>
         
       </div>

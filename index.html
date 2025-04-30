@@ -25,7 +25,7 @@
 
 
   <title>Compositional Causal Reasoning Evaluation in Language Models</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="static/images/brain.png">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
@@ -174,7 +174,13 @@
             termed <b>compositional causal reasoning (CCR)</b>: 
             the ability to infer how causal measures compose 
             and, equivalently, how causal quantities propagate 
-            through graphs.
+            through graphs. <br>
+
+            This benchmark dataset is designed to measure CCR at <b>all three levels of Pearl's Causal Hierarchy</b>: (1) associational, (2) interventional, and (3) counterfactual. 
+            Additionally, we measure the <b>compositional consistency</b> of causal reasoning – if two causal quantities are equal in theory, the LM should infer that they are indeed equal. <br>
+            
+            Using the recommended evaluation pipeline for this benchmark allows for the classification of LM behavior according to a taxonomy of reasoners: 
+            (1) valid-consistent, (2) valid-inconsistent, (3) invalid-consistent, and (4) invalid-inconsistent.
           </p>
         </div>
       </div>
@@ -187,7 +193,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Disentangling signal from noise in reasoning evaluation</h2>
+        <h2 class="title is-3">Disentangling signal from noise in causal reasoning evaluation</h2>
         <div class="content has-text-justified">
           <p>
             <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
@@ -235,11 +241,11 @@
         <div class="content has-text-justified">
           <p>
             <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
-              <li><b>Causal world model.</b> Define a small, fictional world corresponding to a randomly generated causal graph. This will be the causal world model for the LM to reason over. The structural causal model defining our tiny, fictitious world is comprised of exogenous noise variables, endogenous variables, and causal functions (logical operators and, or).</li>
-              <li><b>Causal context prompt.</b> Construct a verbal description of the world model. This verbal description — our “causal context prompt” — contains all pertinent details needed for the LM to infer the world model, as well as extraneous details not needed to solve the CCR task.</li>
-              <li><b>Sampling.</b> Randomly sample exogenous variables and extraneous variables and compute true endogenous variable values. We can sample from observational distribution p or from interventional distributions p'_{0} and p'_{1}. The two interventional distributions can be used to estimate counterfactual measures.</li>
-              <li><b>Factual query prompts.</b> Construct factual queries using observational data sampled from p, which test for relation extraction and reasoning at the associational level of the PCH.</li>
-              <li><b>Counterfactual query pairs.</b> Construct paired interventional queries corresponding to p'_{0} and p'_{1}, which together constitute our counterfactual query pairs. These are used to test for reasoning at the interventional and counterfactual rungs of the PCH.</li>
+              <li><b>Causal world model.</b> First, we define a small, fictional world corresponding to a randomly generated causal graph. This will be the causal world model for the LM to reason over. The structural causal model defining our tiny, fictitious world is comprised of exogenous noise variables, endogenous variables, and causal functions (logical operators and, or).</li>
+              <li><b>Causal context prompt.</b> Second, we construct a verbal description of the world model. This verbal description — our “causal context prompt” — contains all pertinent details needed for the LM to infer the world model, as well as extraneous details not needed to solve the CCR task.</li>
+              <li><b>Sampling.</b> Third, we randomly sample exogenous variables and extraneous variables and compute true endogenous variable values. We can sample from observational distribution p or from interventional distributions p'_{0} and p'_{1}. The two interventional distributions can be used to estimate counterfactual measures.</li>
+              <li><b>Factual query prompts.</b> Next, we construct factual queries using observational data sampled from p, which test for relation extraction and reasoning at the associational level of Pearl's Causal Hierarchy.</li>
+              <li><b>Counterfactual query pairs.</b> Finally, we construct paired interventional queries corresponding to p'_{0} and p'_{1}, which together constitute our counterfactual query pairs. These are used to test for reasoning at the interventional and counterfactual rungs of Pearl's Causal Hierarchy.</li>
             </ul>
           </p>
         </div>

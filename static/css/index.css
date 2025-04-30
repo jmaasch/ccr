@@ -10,7 +10,7 @@ ccr {
 
 gb {
     color: #41B0E4;
-    background-color: ##def5ff;
+    background-color: #def5ff;
     font-weight: bold;
     padding: -0.5px;
     border-radius: 5px;
@@ -19,6 +19,11 @@ gb {
 
 body {
   font-family: 'Noto Sans', sans-serif;
+}
+
+.link {
+  color: #3FBC9D;
+  text-decoration: none;
 }
 
 

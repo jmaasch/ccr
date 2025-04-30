@@ -168,7 +168,7 @@
         <div class="content has-text-justified">
           <p>
             Causal reasoning and compositional reasoning are 
-            two core aspirations in generative AI. Measuring 
+            two core aspirations in AI. Measuring 
             the extent of these behaviors requires principled 
             evaluation methods. We explore a unified perspective that considers both behaviors simultaneously, 
             termed <b>compositional causal reasoning (CCR)</b>: 
@@ -196,15 +196,15 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Disentangling signal from noise in causal reasoning evaluation</h2>
         <div class="content has-text-justified">
-          Current AI faces a persistent recall-reasoning gap. Closing this gap requires that recall is not conflated with genuine reasoning. By design, <ccr>CCR</ccr>.<gb>GB</gb> helps differentiate recall and pattern recognition from true causal reasoning.
+          Current AI faces a persistent recall-reasoning gap. Closing this gap will require that genuine reasoning is rigorously differentiated from recall and pattern recognition. By design, <ccr>CCR</ccr>.<gb>GB</gb> helps differentiate recall and pattern recognition from true causal reasoning.
           <p>
             <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
-              <li><b>Generative, not static.</b> <ccr>CCR</ccr>.<gb>GB</gb> allows users to randomly sample new CCR tasks, mitigating risks of data contamination / leakage. </li>
+              <li><b>Generative, not static.</b> <ccr>CCR</ccr>.<gb>GB</gb> allows users to randomly sample new CCR tasks, mitigating risks that data contamination is boosting perceived reasoning performance. </li>
               <li><b>Reasoning vs training data recall.</b> Completely fictitious world models help prevent the conflation of recall and reasoning. Variables and their causal relations have no real-world counterparts, ensuring that they were never seen by the model during training.
               </li>
-              <li><b>Reasoning vs in-context recall.</b> Compositional consistency evaluation helps disentangle in-context recall (e.g., extraction of relations directly from the context prompt) from reasoning (e.g., correctly inferring distal causal relationships that were never directly stated in the causal context prompt).
+              <li><b>Reasoning vs in-context recall.</b> Compositional consistency evaluation helps disentangle in-context recall (e.g., extraction of relations directly from the causal context) from reasoning (e.g., correctly inferring distal causal relationships that were never directly stated in the causal context).
               </li>
-              <li><b>Causal reasoning vs numeracy.</b> This benchmark contains both quantitative and qualitative CCR tasks (i.e., those requiring and not requiring numerical understanding, such as ordering numbers by magnitude). If an LM does significantly better on qualitative tasks, this could indicate poor numeracy as a root of failure on quantitative CCR tasks.
+              <li><b>Causal reasoning vs numeracy.</b> This benchmark contains both quantitative and qualitative CCR tasks (i.e., those requiring and not requiring numerical understanding, such as ordering numbers by magnitude). If an LM does significantly better on qualitative tasks, this might suggest that poor numeracy is one root of failure on quantitative CCR tasks.
               </li>
             </ul>
           </p>

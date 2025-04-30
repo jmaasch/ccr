@@ -4,15 +4,15 @@ ccr {
     color: #EE2967;
     background-color: #f7dce5;
     font-weight: bold;
-    padding: 1px;
+    padding: -0.5px;
     border-radius: 5px;
 }
 
 gb {
-    color: #7977B8;
-    background-color: #e9e8ff;
+    color: #41B0E4;
+    background-color: ##def5ff;
     font-weight: bold;
-    padding: 1px;
+    padding: -0.5px;
     border-radius: 5px;
 }
 

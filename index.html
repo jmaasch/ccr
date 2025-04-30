@@ -108,6 +108,29 @@
                       </a>
                     </span>
 
+                    <!-- Hugging Face Paper link -->
+                     <span class="link-block">
+                      <a href="https://huggingface.co/papers/2503.04556" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        &#129303;
+                      </span>
+                      <span>Hugging Face Paper</span>
+                    </a>
+                    </span>
+
+                    <!-- Hugging Face Dataset -->
+                    <span class="link-block">
+                      <a href="https://huggingface.co/datasets/jmaasch/compositional_causal_reasoning" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        &#129303;
+                      </span>
+                      <span>Hugging Face Dataset</span>
+                    </a>
+                    </span>
+
+
                     <!-- Supplementary PDF link 
                     <span class="link-block">
                       <a href="static/pdfs/supplementary_material.pdf" target="_blank"
@@ -169,9 +192,9 @@
           <p>
             Causal reasoning and compositional reasoning are 
             two core aspirations in AI. Measuring 
-            the extent of these behaviors requires principled 
-            evaluation methods. We explore a unified perspective that considers both behaviors simultaneously, 
-            termed <b>compositional causal reasoning (CCR)</b>: 
+            these behaviors requires principled 
+            evaluation methods. Our work considers both behaviors simultaneously, coining the 
+            concept of <b>compositional causal reasoning (CCR)</b> in AI: 
             the ability to infer how causal measures compose 
             and, equivalently, how causal quantities propagate 
             through graphs. <br><br>
@@ -196,13 +219,13 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Disentangling signal from noise in causal reasoning evaluation</h2>
         <div class="content has-text-justified">
-          Current AI faces a persistent recall-reasoning gap. Closing this gap will require that genuine reasoning is rigorously differentiated from recall and pattern recognition. By design, <ccr>CCR</ccr>.<gb>GB</gb> helps differentiate recall and pattern recognition from true causal reasoning.
+          Contemporary AI faces a persistent recall-reasoning gap. Closing this gap will require that genuine reasoning is rigorously differentiated from recall and pattern recognition. <ccr>CCR</ccr>.<gb>GB</gb> is designed to help achieve this disentanglement.
           <p>
             <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
               <li><b>Generative, not static.</b> <ccr>CCR</ccr>.<gb>GB</gb> allows users to randomly sample new CCR tasks, mitigating risks that data contamination is boosting perceived reasoning performance. </li>
-              <li><b>Reasoning vs training data recall.</b> Completely fictitious world models help prevent the conflation of recall and reasoning. Variables and their causal relations have no real-world counterparts, ensuring that they were never seen by the model during training.
+              <li><b>Reasoning vs training data recall.</b> Completely fictitious world models help prevent the conflation of recall and reasoning. Variables have no real-world counterparts, ensuring that they were never seen by the model during training.
               </li>
-              <li><b>Reasoning vs in-context recall.</b> Compositional consistency evaluation helps disentangle in-context recall (e.g., extraction of relations directly from the causal context) from reasoning (e.g., correctly inferring distal causal relationships that were never directly stated in the causal context).
+              <li><b>Reasoning vs in-context recall.</b> Compositional consistency evaluation helps disentangle in-context recall (e.g., extraction of relations directly from the causal context) from reasoning (e.g., inferring distal relationships that were never directly stated in the causal context).
               </li>
               <li><b>Causal reasoning vs numeracy.</b> This benchmark contains both quantitative and qualitative CCR tasks (i.e., those requiring and not requiring numerical understanding, such as ordering numbers by magnitude). If an LM does significantly better on qualitative tasks, this might suggest that poor numeracy is one root of failure on quantitative CCR tasks.
               </li>
@@ -240,11 +263,11 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Procedure</h2>
+        <h2 class="title is-3">Constructing each CCR task</h2>
         <div class="content has-text-justified">
           <p>
             <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
-              <li><b>Causal world model.</b> First, we define a small, fictional world corresponding to a randomly generated causal graph. This will be the causal world model for the LM to reason over. The structural causal model defining our tiny, fictitious world is comprised of exogenous noise variables, endogenous variables, and causal functions (logical operators and, or).</li>
+              <li><b>Causal world model.</b> First, we define a fictional world corresponding to a randomly generated causal graph. This will be the causal world model for the LM to reason over. The structural causal model defining our tiny, fictitious world is comprised of exogenous noise variables, endogenous variables, and causal functions (logical operators and, or).</li>
               <li><b>Causal context prompt.</b> Second, we construct a verbal description of the world model. This verbal description — our “causal context prompt” — contains all pertinent details needed for the LM to infer the world model, as well as extraneous details not needed to solve the CCR task.</li>
               <li><b>Sampling.</b> Third, we randomly sample exogenous variables and extraneous variables and compute true endogenous variable values. We can sample from observational distribution p or from interventional distributions p'_{0} and p'_{1}. The two interventional distributions can be used to estimate counterfactual measures.</li>
               <li><b>Factual query prompts.</b> Next, we construct factual queries using observational data sampled from p, which test for relation extraction and reasoning at the associational level of Pearl's Causal Hierarchy.</li>

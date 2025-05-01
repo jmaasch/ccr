@@ -8,12 +8,20 @@ ccr {
     border-radius: 5px;
 }
 
-gb {
+b {
     color: #41B0E4;
     background-color: #def5ff;
     font-weight: bold;
     padding: -0.5px;
     border-radius: 5px;
+}
+
+g {
+  color: #613F99;
+  background-color: #eee3ff;
+  font-weight: bold;
+  padding: -0.5px;
+  border-radius: 5px;
 }
 
 

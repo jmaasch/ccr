@@ -85,50 +85,61 @@
                   <div class="column has-text-centered">
                     <div class="publication-links">
 
-                      <!-- ArXiv abstract Link -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/abs/2503.04556" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="ai ai-arxiv"></i>
-                        </span>
-                        <span>arXiv</span>
-                      </a>
-                      </span>
-
-
-                         <!-- Arxiv PDF link -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/2503.04556" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
+                  <!-- ArXiv abstract Link -->
+                  <span class="link-block">
+                    <a href="https://arxiv.org/abs/2503.04556" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
                     </span>
+                    <span>arXiv</span>
+                  </a>
+                  </span>
 
-                    <!-- Hugging Face Paper link -->
-                     <span class="link-block">
-                      <a href="https://huggingface.co/papers/2503.04556" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        &#129303;
-                      </span>
-                      <span>Hugging Face Paper</span>
-                    </a>
+
+                  <!-- Arxiv PDF link -->
+                  <span class="link-block">
+                    <a href="https://arxiv.org/pdf/2503.04556" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
                     </span>
+                    <span>PDF</span>
+                  </a>
+                  </span>
 
-                    <!-- Hugging Face Dataset -->
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/jmaasch/ccr" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                  </span>
+
+                  <!-- Hugging Face Paper link -->
                     <span class="link-block">
-                      <a href="https://huggingface.co/datasets/jmaasch/compositional_causal_reasoning" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        &#129303;
-                      </span>
-                      <span>Hugging Face Dataset</span>
-                    </a>
+                    <a href="https://huggingface.co/papers/2503.04556" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      &#129303;
                     </span>
+                    <span>Hugging Face Paper</span>
+                  </a>
+                  </span>
+
+                  <!-- Hugging Face Dataset -->
+                  <span class="link-block">
+                    <a href="https://huggingface.co/datasets/jmaasch/compositional_causal_reasoning" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      &#129303;
+                    </span>
+                    <span>Hugging Face Dataset</span>
+                  </a>
+                  </span>
 
 
                     <!-- Supplementary PDF link 
@@ -143,17 +154,8 @@
                   </span>
                   -->
 
-                  <!-- Github link 
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-                -->
+                  
+                
 
             </div>
           </div>
@@ -267,12 +269,15 @@
         <div class="content has-text-justified">
           <p>
             <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
-              <li>&#127757; <b>Causal world model.</b> First, we define a fictional world corresponding to a randomly generated causal graph. This will be the causal world model for the LM to reason over. The structural causal model defining our tiny, fictitious world is comprised of exogenous noise variables, endogenous variables, and causal functions (logical operators and, or).</li>
-              <li>&#xe301; <b>Causal context prompt.</b> Second, we construct a verbal description of the world model. This verbal description — our “causal context prompt” — contains all pertinent details needed for the LM to infer the world model, as well as extraneous details not needed to solve the CCR task.</li>
-              <li>&#xe301; <b>Sampling.</b> Third, we randomly sample exogenous variables and extraneous variables and compute true endogenous variable values. We can sample from observational distribution p or from interventional distributions p'_{0} and p'_{1}. The two interventional distributions can be used to estimate counterfactual measures.</li>
-              <li>&#x1F440; <b>Factual query prompts.</b> Next, we construct factual queries using observational data sampled from p, which test for relation extraction and reasoning at the associational level of Pearl's Causal Hierarchy.</li>
-              <li>&#x1F9E0; <b>Counterfactual query pairs.</b> Finally, we construct paired interventional queries corresponding to p'_{0} and p'_{1}, which together constitute our counterfactual query pairs. These are used to test for reasoning at the interventional and counterfactual rungs of Pearl's Causal Hierarchy.</li>
+              <li><b>Causal world model.</b> First, we define a fictional world corresponding to a randomly generated causal graph. This will be the causal world model for the LM to reason over. The structural causal model defining our tiny, fictitious world is comprised of exogenous noise variables, endogenous variables, and causal functions (logical operators and, or).</li>
+              <li><b>Causal context prompt.</b> Second, we construct a verbal description of the world model. This verbal description — our “causal context prompt” — contains all pertinent details needed for the LM to infer the world model, as well as extraneous details not needed to solve the CCR task.</li>
+              <li><b>Sampling.</b> Third, we randomly sample exogenous variables and extraneous variables and compute true endogenous variable values. We can sample from observational distribution p or from interventional distributions p'_{0} and p'_{1}. The two interventional distributions can be used to estimate counterfactual measures.</li>
+              <li><b>Factual query prompts.</b> Next, we construct factual queries using observational data sampled from p, which test for relation extraction and reasoning at the associational level of Pearl's Causal Hierarchy.</li>
+              <li><b>Counterfactual query pairs.</b> Finally, we construct paired interventional queries corresponding to p'_{0} and p'_{1}, which together constitute our counterfactual query pairs. These are used to test for reasoning at the interventional and counterfactual rungs of Pearl's Causal Hierarchy.</li>
             </ul>
+          </p>
+          <p style="text-align:center">
+            <img style="vertical-align:middle" src='static/images/prompt.png' width="180">
           </p>
         </div>
       </div>

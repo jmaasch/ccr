@@ -189,18 +189,38 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3"><ccr>CCR</ccr>.<g>G</g><b>B</b>: A <gb>G</gb>enerative <gb>B</gb>enchmark for <ccr>C</ccr>ompositional <ccr>C</ccr>ausal <ccr>R</ccr>easoning Evaluation</h2>
+        <h2 class="title is-3"><ccr>CCR</ccr>.<gb>GB</gb>: A <gb>G</gb>enerative <gb>B</gb>enchmark for <ccr>C</ccr>ompositional <ccr>C</ccr>ausal <ccr>R</ccr>easoning Evaluation</h2>
         <div class="content has-text-justified">
           <p>
             Causal reasoning and compositional reasoning are 
             two core aspirations in AI. Measuring 
             these behaviors requires principled 
             evaluation methods. Our work considers both behaviors simultaneously, coining the 
-            concept of <b>compositional causal reasoning (CCR)</b> in AI: 
+            concept of <ccr>compositional causal reasoning (CCR)</ccr> in AI: 
             the ability to infer how causal measures compose 
             and, equivalently, how causal quantities propagate 
-            through graphs. The <ccr>CCR</ccr>.<g>G</g><b>B</b> benchmark is designed to measure CCR at <b>all 
+            through graphs. The <ccr>CCR</ccr>.<gb>GB</gb> benchmark is designed to measure CCR at <b>all 
             three levels of Pearl's Causal Hierarchy</b>: (1) associational, (2) interventional, and (3) counterfactual. 
+          </p>
+          <p style="text-align:center">
+            <img style="vertical-align:middle" src='static/images/te_decomp.png' width="50%">
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="hero">
+  <div class="hero-body">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Compositionality + causality – intuition</h2>
+        <div class="content has-text-justified">
+          <p>
+            Explain here. Images below.
           </p>
           <p style="text-align:center">
             <img style="vertical-align:middle" src='static/images/te_decomp.png' width="50%">
@@ -216,7 +236,6 @@
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Intuition: Compositionality + Causality</h2>
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
@@ -257,15 +276,15 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Disentangling signal from noise in causal reasoning evaluation</h2>
         <div class="content has-text-justified">
-          Contemporary AI faces a persistent recall-reasoning gap. Closing this gap will require that genuine reasoning is rigorously differentiated from alternative phenomena, such as pattern recognition. <ccr>CCR</ccr>.<g>G</g><b>B</b> is designed to help achieve this disentanglement.
+          Contemporary AI faces a persistent recall-reasoning gap. Closing this gap will require that genuine reasoning is rigorously differentiated from alternative phenomena, such as pattern recognition. <ccr>CCR</ccr>.<gb>GB</gb> is designed to help achieve this disentanglement.
           <p>
             <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
-              <li><b>Generative, not static.</b> <ccr>CCR</ccr>.<g>G</g><b>B</b> allows users to randomly sample new CCR tasks, mitigating risks that data contamination is boosting perceived reasoning performance. </li>
-              <li><b>Reasoning vs training data recall.</b> Completely fictitious world models help prevent the conflation of recall and reasoning. Variables have no real-world counterparts, ensuring that they were never seen by the model during training.
+              <li><hi>Generative, not static.</hi> <ccr>CCR</ccr>.<gb>GB</gb> allows users to randomly sample new CCR tasks, mitigating risks that data contamination is boosting perceived reasoning performance. </li>
+              <li><hi>Reasoning vs training data recall.</hi> Completely fictitious world models help prevent the conflation of recall and reasoning. Variables have no real-world counterparts, ensuring that they were never seen by the model during training.
               </li>
-              <li><b>Reasoning vs in-context recall.</b> Compositional consistency evaluation helps disentangle in-context recall (e.g., extraction of relations directly from the causal context) from reasoning (e.g., inferring distal relationships that were never directly stated in the causal context).
+              <li><hi>Reasoning vs in-context recall.</hi> Compositional consistency evaluation helps disentangle in-context recall (e.g., extraction of relations directly from the causal context) from reasoning (e.g., inferring distal relationships that were never directly stated in the causal context).
               </li>
-              <li><b>Causal reasoning vs numeracy.</b> This benchmark contains both quantitative and qualitative CCR tasks (i.e., those requiring and not requiring numerical understanding, such as ordering numbers by magnitude). If an LM does significantly better on qualitative tasks, this might suggest that poor numeracy is one root of failure on quantitative CCR tasks.
+              <li><hi>Causal reasoning vs numeracy.</hi> This benchmark contains both quantitative and qualitative CCR tasks (i.e., those requiring and not requiring numerical understanding, such as ordering numbers by magnitude). If an LM does significantly better on qualitative tasks, this might suggest that poor numeracy is one root of failure on quantitative CCR tasks.
               </li>
             </ul>
           </p>
@@ -286,14 +305,12 @@
         <div class="content has-text-justified">
           <p>
             <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
-              <li><b>Causal world model.</b> First, we define a fictional world corresponding to a randomly generated causal graph. This will be the causal world model for the LM to reason over. The structural causal model defining our tiny, fictitious world is comprised of exogenous noise variables, endogenous variables, and causal functions (logical operators <i>and</i>, <i>or</i>).</li>
-              <li><b>Causal context prompt.</b> Second, we construct a verbal description of the world model. This verbal description — our “causal context prompt” — contains all pertinent details needed for the LM to infer the world model, as well as extraneous details not needed to solve the CCR task.</li>
-              <li><b>Sampling.</b> Third, we randomly sample exogenous variables and extraneous variables and compute true endogenous variable values. We can sample from observational distribution p or from interventional distributions p'_{0} and p'_{1}. The two interventional distributions can be used to estimate counterfactual measures.</li>
-              <li><b>Factual query prompts.</b> Next, we construct factual queries using observational data sampled from p, which test for relation extraction and reasoning at the associational level of Pearl's Causal Hierarchy.</li>
-              <li><b>Counterfactual query pairs.</b> Finally, we construct paired interventional queries corresponding to p'_{0} and p'_{1}, which together constitute our counterfactual query pairs. These are used to test for reasoning at the interventional and counterfactual rungs of Pearl's Causal Hierarchy.</li>
+              <li><hi>Causal world model.</hi> First, we define a fictional world corresponding to a randomly generated causal graph. This will be the causal world model for the LM to reason over. The structural causal model defining our tiny, fictitious world is comprised of exogenous noise variables, endogenous variables, and causal functions (logical operators <i>and</i>, <i>or</i>).</li>
+              <li><hi>Causal context prompt.</hi> Second, we construct a verbal description of the world model. This verbal description — our “causal context prompt” — contains all pertinent details needed for the LM to infer the world model, as well as extraneous details not needed to solve the CCR task.</li>
+              <li><hi>Sampling.</hi> Third, we randomly sample exogenous variables and extraneous variables and compute true endogenous variable values. We can sample from observational distribution p or from interventional distributions p'_{0} and p'_{1}. The two interventional distributions can be used to estimate counterfactual measures.</li>
+              <li><hi>Factual query prompts.</hi> Next, we construct factual queries using observational data sampled from p, which test for relation extraction and reasoning at the associational level of Pearl's Causal Hierarchy.</li>
+              <li><hi>Counterfactual query pairs.</hi> Finally, we construct paired interventional queries corresponding to p'_{0} and p'_{1}, which together constitute our counterfactual query pairs. These are used to test for reasoning at the interventional and counterfactual rungs of Pearl's Causal Hierarchy.</li>
             </ul>
-          </p>
-          <p style="text-align:center">
             <img style="vertical-align:middle" src='static/images/prompt.png' width="100%">
           </p>
         </div>
@@ -313,7 +330,7 @@
         <h2 class="title is-3">LMs as counterfactual data simulators</h2>
         <div class="content has-text-justified">
           <p>
-            <ccr>CCR</ccr>.<g>G</g><b>B</b> treats LMs as <i>counterfactual data simulators</i>...
+            <ccr>CCR</ccr>.<gb>GB</gb> treats LMs as <i>counterfactual data simulators</i>...
           </p>
         </div>
       </div>
@@ -336,16 +353,16 @@
         <div class="content has-text-justified">
           <p>
             <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
-              <li><b>Associational.</b></li>
+              <li><hi>Associational.</hi></li>
                 <ul style="line-height:1.75;list-style-type:'&mdash;&#xFE0E; ';">
                   <li><b>Metrics.</b> $\theta(\mathbf{f}_{\text{true}},\mathbf{f}_{\text{pred}})$ for $\theta$ in {F1,precision,recall,accuracy,…}.</li>
                 </ul>
-              <li><b>Interventional.</b></li>
+              <li><hi>Interventional.</hi></li>
                 <ul style="line-height:1.75;list-style-type:'&mdash;&#xFE0E; ';">
                   <li><b>Metrics.</b> $\theta(\mathbf{do(0)}_{\text{true}},\mathbf{do(0)}_{\text{pred}})$, 
                     $\theta(\mathbf{do(1)}_{\text{true}},\mathbf{do(1)}_{\text{true}})$ for $\theta$ in {F1,precision,recall,accuracy,…}.</li>
                 </ul>
-              <li><b>Counterfactual.</b> Causal reasoning.</li>
+              <li><hi>Counterfactual.</hi> Causal reasoning.</li>
                 <ul style="line-height:1.75;list-style-type:'&mdash;&#xFE0E; ';">
                   <li><b>Metrics.</b> External validity RAE PNS using both $\mathbf{do(0)}_{\text{pred}}$ and $\mathbf{do(0)}_{\text{pred}}$. Compositional causal reasoning. 
                     Internal consistency and external validity of compositions.</li>

@@ -232,10 +232,15 @@
         <h2 class="title is-3">Compositionality + causality</h2>
         <div class="content has-text-justified">
           <p>
-            Explain intuition here. Images below.
-          </p>
-          <p style="text-align:center">
-            <img style="vertical-align:middle" src='static/images/te_decomp.png' width="50%">
+            We define <ccr>compositional causal reasoning (CCR)</ccr> as
+            the <b>ability to infer compositions and decompositions of
+            causal measures in factual and counterfactual worlds.</b> By extension, this requires reasoning over the propagation
+            of causal quantities through graphs. Thus, our framework also implicitly tests for graphical reasoning. To facilitate 
+            CCR evaluation, we introduce a framework for the exhaustive assessment of <hi>compositional consistency</hi>: correct inference that
+            equivalent compositions are indeed equal. We measure compositional consistency with respect to ground truth (<hi>external
+              validity</hi>) and concordance among the LM’s responses (<hi>internal consistency</hi>).
+              <br><br>
+              See the images below for further intuition on the intersection of causility and compositionality.
           </p>
         </div>
       </div>
@@ -249,28 +254,31 @@
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <img src="static/images/noncausal.png" alt="A non-causal example "/>
+          <h2 class="subtitle has-text-centered">
+            A non-causal example for intuition. Compositionally consistent responses to two formulations of a simple (non-causal) query. Reasoning is externally valid
+            if A1 and A2 both equal A<sup>*</sup>, and internally consistent if A1==A2.
+          </h2>
+        </div>
        <div class="item">
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
+        <img src="static/images/te_decomp.png" alt="TE = NDE + NIE"/>
         <h2 class="subtitle has-text-centered">
-          First image description.
+          When causal functions are linear, the total causal effect <b>decomposes</b> as a sum of the direct and indirect effect. 
+          A compositionally consistent causal reasoning agent should correctly infer that TE is equivalent to NDE + NIE.
         </h2>
       </div>
       <div class="item">
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
+        <img src="static/images/carousel3.jpg" alt="PNS composition"/>
         <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
+         The PNS composes multiplicatively over biconnected components when the outcome variable is monotonic in the exposure variable.
        </h2>
      </div>
      <div class="item">
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
+      <img src="static/images/carousel4.jpg" alt="ATE composition"/>
       <h2 class="subtitle has-text-centered">
-        Fourth image description.
+        When causal functions are linear, the average treatment effect composes multiplicatively over biconnected components. 
+        This does not always hold for nonlinear causal functions.
       </h2>
     </div>
   </div>

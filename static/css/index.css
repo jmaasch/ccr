@@ -23,7 +23,6 @@ body {
 }
 
 
-
 .link {
   color: #3FBC9D;
   text-decoration: none;
@@ -33,6 +32,7 @@ body {
 .footer .icon-link {
     font-size: 25px;
     color: #000;
+    background-color: white !important;
 }
 
 .link-block a {

@@ -43,6 +43,10 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+
+  <script type="text/javascript"
+  src="https://www.maths.nottingham.ac.uk/plp/pmadw/LaTeXMathML.js">
+  </script>
 </head>
 <body>
 
@@ -185,7 +189,8 @@
  
 
 <!-- Paper abstract -->
-<section class="section hero is-light">
+<section class="hero">
+  <div class="hero-body">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -203,16 +208,18 @@
             three levels of Pearl's Causal Hierarchy</b>: (1) associational, (2) interventional, and (3) counterfactual. 
           </p>
           <p style="text-align:center">
-            <img style="vertical-align:middle" src='static/images/te_decomp.png' width="80%">
+            <img style="vertical-align:middle" src='static/images/te_decomp.png' width="50%">
           </p>
         </div>
       </div>
     </div>
   </div>
+</div>
 </section>
 
 <!-- Procedure -->
-<section class="section hero is-light">
+<section class="hero">
+  <div class="hero-body">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -234,10 +241,12 @@
       </div>
     </div>
   </div>
+</div>
 </section>
 
 <!-- Procedure -->
-<section class="section hero is-light">
+<section class="hero">
+  <div class="hero-body">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -250,29 +259,36 @@
       </div>
     </div>
   </div>
+</div>
 </section>
 
 <!-- Procedure -->
-<section class="section hero is-light">
+<section class="hero">
+  <div class="hero-body">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Three levels of evaluation</h2>
+        This framework allows for evaluation at all three levels of Pearl's Causal Hierarchy. For our set of factual queries, 
+        let $\mathbf{f}_{\text{true}}$ and $\mathbf{f}_{\text{pred}}$ be ground truth and the vector of model responses, respectively. 
+        Let $\mathbf{do(0)}_{\text{true}}$, $\mathbf{do(0)}_{\text{true}}$ and $\mathbf{do(0)}_{\text{pred}}$, $\mathbf{do(1)}_{\text{pred}}$ be ground truth and the vector of model responses for 
+        interventional queries under $do(cause = 0)$ and $do(cause = 1)$, respectively.
         <div class="content has-text-justified">
           <p>
             <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
               <li><b>Associational.</b></li>
                 <ul style="line-height:1.75;list-style-type:'&mdash;&#xFE0E; ';">
-                  <li><b>Metrics. Theta(true_factual,pred_factual) for theta in {F1,precision,recall,accuracy,…}.</b></li>
+                  <li><b>Metrics.</b> $\theta(\mathbf{f}_{\text{true}},\mathbf{f}_{\text{pred}})$ for $\theta$ in {F1,precision,recall,accuracy,…}.</li>
                 </ul>
               <li><b>Interventional.</b></li>
                 <ul style="line-height:1.75;list-style-type:'&mdash;&#xFE0E; ';">
-                  <li><b>Metrics. Theta(true_interv1,pred_interv1), F1(true_interv0,pred_interv0) for theta in {F1,precision,recall,accuracy,…}.</b></li>
+                  <li><b>Metrics.</b> $\theta(\mathbf{do(0)}_{\text{true}},\mathbf{do(0)}_{\text{pred}})$, 
+                    $\theta(\mathbf{do(1)}_{\text{true}},\mathbf{do(1)}_{\text{true}})$ for $\theta$ in {F1,precision,recall,accuracy,…}.</li>
                 </ul>
               <li><b>Counterfactual.</b> Causal reasoning.</li>
                 <ul style="line-height:1.75;list-style-type:'&mdash;&#xFE0E; ';">
-                  <li><b>Metrics. External validity RAE PNS using both pred_interv1 and pred_interv0. Compositional causal reasoning. 
-                    Internal consistency and external validity of compositions.</b></li>
+                  <li><b>Metrics.</b> External validity RAE PNS using both $\mathbf{do(0)}_{\text{pred}}$ and $\mathbf{do(0)}_{\text{pred}}$. Compositional causal reasoning. 
+                    Internal consistency and external validity of compositions.</li>
                 </ul>
             </ul>
           </p>
@@ -280,30 +296,13 @@
       </div>
     </div>
   </div>
-</section>
-
-
-<!-- Procedure -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Performance metrics</h2>
-        <div class="content has-text-justified">
-          <p>
-            <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
-              <li></li>
-            </ul>
-          </p>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
 
 <!-- Procedure -->
-<section class="section hero is-light">
+<section class="hero">
+  <div class="hero-body">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -325,6 +324,7 @@
       </div>
     </div>
   </div>
+</div>
 </section>
 
 
@@ -369,7 +369,7 @@
 
 
 <!-- Paper poster -->
-<section class="hero is-small is-light">
+<section class="hero">
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Paper slides</h2>

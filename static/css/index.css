@@ -22,6 +22,15 @@ body {
   background-color: white;
 }
 
+* {
+  background-color: transparent !important;
+}
+
+body * {
+  font-family: 'Noto Sans', sans-serif;
+  background-color: white !important;
+}
+
 .link {
   color: #3FBC9D;
   text-decoration: none;

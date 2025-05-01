@@ -202,6 +202,9 @@
             through graphs. The <ccr>CCR</ccr>.<gb>GB</gb> benchmark is designed to measure CCR at <b>all 
             three levels of Pearl's Causal Hierarchy</b>: (1) associational, (2) interventional, and (3) counterfactual. 
           </p>
+          <p style="text-align:center">
+            <img style="vertical-align:middle" src='static/images/te_decomp.png' width="80%">
+          </p>
         </div>
       </div>
     </div>
@@ -238,13 +241,58 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
+        <h2 class="title is-3">LMs as counterfactual data simulators</h2>
+        <div class="content has-text-justified">
+          <p>
+            <ccr>CCR</ccr>.<gb>GB</gb> treats LMs as <i>counterfactual data simulators</i>...
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Procedure -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
         <h2 class="title is-3">Three levels of evaluation</h2>
         <div class="content has-text-justified">
           <p>
             <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
-              <li><b>Associational.</b> Theta(true_factual,pred_factual) for theta in {F1,precision,recall,accuracy,…}.</li>
-              <li><b>Interventional.</b> Theta(true_interv1,pred_interv1), F1(true_interv0,pred_interv0) for theta in {F1,precision,recall,accuracy,…}.</li>
-              <li><b>Counterfactual.</b> Causal reasoning. External validity RAE PNS using both pred_interv1 and pred_interv0. Compositional causal reasoning. Internal consistency and external validity of compositions.</li>
+              <li><b>Associational.</b></li>
+                <ul style="line-height:1.75;list-style-type:'&mdash;&#xFE0E; ';">
+                  <li><b>Metrics. Theta(true_factual,pred_factual) for theta in {F1,precision,recall,accuracy,…}.</b></li>
+                </ul>
+              <li><b>Interventional.</b></li>
+                <ul style="line-height:1.75;list-style-type:'&mdash;&#xFE0E; ';">
+                  <li><b>Metrics. Theta(true_interv1,pred_interv1), F1(true_interv0,pred_interv0) for theta in {F1,precision,recall,accuracy,…}.</b></li>
+                </ul>
+              <li><b>Counterfactual.</b> Causal reasoning.</li>
+                <ul style="line-height:1.75;list-style-type:'&mdash;&#xFE0E; ';">
+                  <li><b>Metrics. External validity RAE PNS using both pred_interv1 and pred_interv0. Compositional causal reasoning. 
+                    Internal consistency and external validity of compositions.</b></li>
+                </ul>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Procedure -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Performance metrics</h2>
+        <div class="content has-text-justified">
+          <p>
+            <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
+              <li></li>
             </ul>
           </p>
         </div>
@@ -263,7 +311,7 @@
         <div class="content has-text-justified">
           <p>
             <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
-              <li><b>Causal world model.</b> First, we define a fictional world corresponding to a randomly generated causal graph. This will be the causal world model for the LM to reason over. The structural causal model defining our tiny, fictitious world is comprised of exogenous noise variables, endogenous variables, and causal functions (logical operators and, or).</li>
+              <li><b>Causal world model.</b> First, we define a fictional world corresponding to a randomly generated causal graph. This will be the causal world model for the LM to reason over. The structural causal model defining our tiny, fictitious world is comprised of exogenous noise variables, endogenous variables, and causal functions (logical operators <i>and</i>, <i>or</i>).</li>
               <li><b>Causal context prompt.</b> Second, we construct a verbal description of the world model. This verbal description — our “causal context prompt” — contains all pertinent details needed for the LM to infer the world model, as well as extraneous details not needed to solve the CCR task.</li>
               <li><b>Sampling.</b> Third, we randomly sample exogenous variables and extraneous variables and compute true endogenous variable values. We can sample from observational distribution p or from interventional distributions p'_{0} and p'_{1}. The two interventional distributions can be used to estimate counterfactual measures.</li>
               <li><b>Factual query prompts.</b> Next, we construct factual queries using observational data sampled from p, which test for relation extraction and reasoning at the associational level of Pearl's Causal Hierarchy.</li>
@@ -271,7 +319,7 @@
             </ul>
           </p>
           <p style="text-align:center">
-            <img style="vertical-align:middle" src='static/images/prompt.png' width="60%">
+            <img style="vertical-align:middle" src='static/images/prompt.png' width="80%">
           </p>
         </div>
       </div>

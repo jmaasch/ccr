@@ -2,7 +2,7 @@
 
 ccr {
     color: #EE2967;
-    background-color: #f7dce5;
+    background-color: #f7dce5 !important;
     font-weight: bold;
     padding: -0.5px;
     border-radius: 5px;
@@ -10,7 +10,7 @@ ccr {
 
 gb {
     color: #41B0E4;
-    background-color: #def5ff;
+    background-color: #def5ff !important;
     font-weight: bold;
     padding: -0.5px;
     border-radius: 5px;

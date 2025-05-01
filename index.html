@@ -273,17 +273,21 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Disentangling signal from noise in causal reasoning evaluation</h2>
         <div class="content has-text-justified">
-          Contemporary AI faces a persistent recall-reasoning gap. Closing this gap will require that genuine reasoning is rigorously differentiated from alternative phenomena, such as pattern recognition. <ccr>CCR</ccr>.<gb>GB</gb> is designed to help achieve this disentanglement.
+          Contemporary AI faces a persistent recall-reasoning gap. Closing this gap will require that genuine reasoning is rigorously differentiated from alternative phenomena, such as pattern recognition. <ccr>CCR</ccr>.<gb>GB</gb> is designed with this in mind.
           <p>
             <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
               <li><hi>Generative, not static.</hi> The automated task generator allows users to randomly sample new CCR tasks, mitigating risks that data contamination is boosting perceived reasoning performance. </li>
-              <li><hi>Reasoning vs training data recall.</hi> Completely fictitious world models help prevent the conflation of recall and reasoning. Variables have no real-world counterparts, ensuring that they were never seen by the model during training.
+              <li><hi>Reasoning vs training data recall.</hi> Fictitious causal world models help prevent the conflation of recall and reasoning. Variables have no real-world counterparts, ensuring that they were never seen by the model during training.
               </li>
               <li><hi>Reasoning vs in-context recall.</hi> Compositional consistency evaluation helps disentangle in-context recall (e.g., extraction of relations directly from the causal context) from reasoning (e.g., inferring distal relationships that were never directly stated in the causal context).
               </li>
               <li><hi>Causal reasoning vs numeracy.</hi> This benchmark contains both quantitative and qualitative CCR tasks (i.e., those requiring and not requiring numerical understanding, such as ordering numbers by magnitude). If an LM does significantly better on qualitative tasks, this might suggest that poor numeracy is one root of failure on quantitative CCR tasks.
               </li>
             </ul>
+          </p>
+          <p style="text-align:center">
+            <img style="vertical-align:middle" src='static/images/recall.png' width="50%">
+            <small>Lower error rate on factual questions (recall) than counterfactual questions (reasoning) [<a href="https://arxiv.org/abs/2410.03767" target="_blank">Hüyük et al. 2025</a>].</small>
           </p>
         </div>
       </div>
@@ -308,7 +312,7 @@
               <li><hi>Factual query prompts.</hi> Next, we construct factual queries using observational data sampled from p, which test for relation extraction and reasoning at the associational level of Pearl's Causal Hierarchy.</li>
               <li><hi>Counterfactual query pairs.</hi> Finally, we construct paired interventional queries corresponding to p'_{0} and p'_{1}, which together constitute our counterfactual query pairs. These are used to test for reasoning at the interventional and counterfactual rungs of Pearl's Causal Hierarchy.</li>
             </ul>
-            <img style="vertical-align:middle" src='static/images/prompt.png' width="100%">
+            <img style="vertical-align:middle" src='static/images/prompt.png' width="90%">
           </p>
         </div>
       </div>

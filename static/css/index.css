@@ -155,13 +155,14 @@ body {
 
 .results-carousel {
   overflow: hidden;
+  width: 80%; 
+  margin: auto;
 }
 
 .results-carousel .item {
   margin: 5px;
   overflow: hidden;
   padding: 20px;
-  width: 50%;
   font-size: 0;
 }
 

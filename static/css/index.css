@@ -19,6 +19,7 @@ gb {
 
 body {
   font-family: 'Noto Sans', sans-serif;
+  background-color: white;
 }
 
 .link {
@@ -150,7 +151,7 @@ body {
 }
 
 .slider-pagination .slider-page {
-  background: #000000;
+  background: white;
 }
 
 .eql-cntrb { 

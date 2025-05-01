@@ -206,7 +206,8 @@
               <li><hi>Random CCR task generator.</hi> Open source code for on-demand task generation according to user specifications (graphical complexity, task theme, etc.).</li>
               <li><hi>Pre-sampled benchmark dataset.</hi> A static dataset sampled from the random task generator, as a starting point for community benchmarking. </li>
             </ul>
-
+            <br>
+            <img style="vertical-align:middle" src='static/images/pch.png' width="60%" class="center">
           </p>
         </div>
       </div>
@@ -282,7 +283,7 @@
           Contemporary AI faces a persistent recall-reasoning gap. Closing this gap will require that genuine reasoning is rigorously differentiated from alternative phenomena, such as pattern recognition. <ccr>CCR</ccr>.<gb>GB</gb> is designed with this in mind.
           <p>
             <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
-              <li><hi>Generative, not static.</hi> The automated task generator allows users to randomly sample new CCR tasks, mitigating risks that data contamination is boosting perceived reasoning performance. </li>
+              <li><hi>Generative, not purely static.</hi> The automated task generator allows users to randomly sample new CCR tasks, mitigating risks that data contamination is boosting perceived reasoning performance. </li>
               <li><hi>Reasoning vs training data recall.</hi> Fictitious causal world models help prevent the conflation of recall and reasoning. Variables have no real-world counterparts, ensuring that they were never seen by the model during training.
               </li>
               <li><hi>Reasoning vs in-context recall.</hi> Compositional consistency evaluation helps disentangle in-context recall (e.g., extraction of relations directly from the causal context) from reasoning (e.g., inferring distal relationships that were never directly stated in the causal context).
@@ -314,21 +315,21 @@
             <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
               <li><hi>Causal world model.</hi> First, we define a fictional world corresponding to a randomly generated causal graph. 
                 This will be the causal world model for the LM to reason over. The structural causal model defining our fictitious world is 
-                comprised of exogenous noise variables, endogenous variables, and causal functions (logical operators <i>and</i>, <i>or</i>).</li>
+                comprised of binary exogenous noise variables, binary endogenous variables, and causal functions (logical operators <i>and</i>, <i>or</i>).</li>
               <li><hi>Causal context prompt.</hi> Second, we construct a verbal description of the world model. This verbal description — our 
                 “causal context prompt” — contains all pertinent details needed for the LM to infer the world model, as well as extraneous details not needed to solve the CCR task. 
                 The causal context centers on a user defined theme (e.g., ClinicalNotes, CandyParty, FlowerGarden, FluVaccine, etc.).</li>
               <li><hi>Sampling.</hi> Third, we randomly sample exogenous variables and extraneous variables and compute true endogenous variable values. 
-                Sampled values are then used to construct the "sample context" in natural language, which is concatenated to our causal context prompt. Each causal context will ultimately 
-                be paired with many sample contexts.
+                Sampled values are then used to construct the "sample context" in natural language, which is concatenated to our causal context prompt. Each causal context will copied 
+                many times, where each copy is paired with a new sample context.
               <li><hi>Factual query prompts.</hi> Next, we construct factual queries by treating the causal context + sample context as observational data. 
-                All queries are phrased as True/False questions. The factual query is then concatenated to a copy of the full text prompt. Responses to factual prompts
+                All queries are phrased as yes/no questions. The factual query is then concatenated to a copy of the causal context + sample context. Responses to factual prompts
                 can be used to compute $p(y \mid x)$ for binary cause $x$ and binary effect $y$. Thus, evaluation on factual queries alone tests reasoning at the <b>associational level</b> 
                 of Pearl's Causal Hierarchy. Note that evaluation at the associational level is less powerful at distinguishing recall from reasoning than the higher levels 
                 of the Causal Hierarchy. </li>
               <li><hi>Interventional query pairs.</hi> Finally, we construct paired interventional queries corresponding to interventions $do(X = True)$ and $do(X = False)$. 
-                Each interventional query is individually concatenated to a copy of the full text prompt. 
-                As with factual queries, all interventional queries are phrased as True/False questions. Responses to interventional prompts are used to compute $p(y \mid do(X = True))$ 
+                Each interventional query is individually concatenated to a copy of the causal context + sample context. 
+                As with factual queries, all interventional queries are phrased as yes/no questions. Responses to interventional prompts are used to compute $p(y \mid do(X = True))$ 
                 and $p(y \mid do(X = False))$. As matched pairs over the same sample context, these are also used to compute the PNS: $p(y \mid do(X = True)) - p(y \mid do(X = False))$.  
                 Thus, evaluation on interventional prompts tests for reasoning at both the <b>interventional and counterfactual rungs</b> of Pearl's Causal Hierarchy.</li>
             </ul>

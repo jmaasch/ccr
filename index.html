@@ -248,7 +248,7 @@
             and causality already enjoys a rich mathematical framework: the formalisms and methods of graphical modeling and causal 
             inference. A classic example of compositionality in causal inference is the decomposition of the total effect in linear structural causal models (SCMs).
             When causal functions are linear, the total causal effect decomposes as a sum of the direct and indirect effect. 
-            A compositionally consistent causal reasoning agent should correctly infer that TE is equivalent to NDE + NIE.
+            A compositionally consistent causal reasoning agent should correctly infer that TE is equivalent to NDE + NIE:
             <br><br>
             
             <p align="center">
@@ -260,7 +260,7 @@
             <br><br>
 
             <p align="center">
-                <img src="https://jmaasch.github.io/ccr_benchmark/static/images/pns.png" width="400">
+                <img src="https://jmaasch.github.io/ccr_benchmark/static/images/pns.png" width="550">
             </p>
 
             As shown in <a href="https://arxiv.org/abs/2503.04556" target="_blank">Maasch et al. 2025</a>, the PNS composes multiplicatively over the biconnected components of the causal DAG.
@@ -280,38 +280,63 @@
 </div>
 </section>
 
-<!-- Image carousel 
+<!-- Image carousel -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item">
-          <img src="static/images/noncausal.png" alt="A non-causal example" width="40%" class="center"/>
+          <img src="static/images/icml/relative_errors_long.jpg" alt="results" width="80%" class="center"/>
           <h2 class="subtitle has-text-centered">
-            <small>A non-causal example for intuition. Compositionally consistent responses to two formulations of a simple (non-causal) query. Reasoning is externally valid
-              if A1 and A2 both equal A<sup>*</sup>, and internally consistent if A1==A2.</small>
+           <small></small>
+         </h2>
+       </div>
+        <div class="item">
+          <img src="static/images/icml/correctness_by_quantity_top_4.jpg" alt="results" width="80%" class="center"/>
+          <h2 class="subtitle has-text-centered">
+            <small></small>
           </h2>
         </div>
        <div class="item">
-        <img src="static/images/te_decomp.png" alt="TE = NDE + NIE" width="30%" class="center"/>
+        <img src="static/images/icml/errors_by_quantity.jpg" alt="results" width="80%" class="center"/>
         <h2 class="subtitle has-text-centered">
-          <small>When causal functions are linear, the total causal effect <b>decomposes</b> as a sum of the direct and indirect effect. 
-            A compositionally consistent causal reasoning agent should correctly infer that TE is equivalent to NDE + NIE.</small>
+          <small></small>
         </h2>
       </div>
       <div class="item">
-        <img src="static/images/pns_comp.png" alt="PNS composition" width="50%" class="center"/>
+        <img src="static/images/icml/relative_error_mediators.jpg" alt="results" width="80%" class="center"/>
         <h2 class="subtitle has-text-centered">
-         <small>The probability of necessity and sufficiency (PNS) composes multiplicatively over biconnected components when 
-          the outcome variable is monotonic in the exposure variable (Theorem 1, ).</small>
+         <small></small>
        </h2>
-     </div>
+      </div>
+      <div class="item">
+        <img src="static/images/icml/error_analysis_gpt4o_pnsdy_counterfactual.png" alt="results" width="80%" class="center"/>
+        <h2 class="subtitle has-text-centered">
+         <small></small>
+       </h2>
+      </div>
+      <div class="item">
+        <img src="static/images/icml/error_analysis_gpt4o_pnsdy_factual.png" alt="results" width="80%" class="center"/>
+        <h2 class="subtitle has-text-centered">
+         <small></small>
+       </h2>
+      </div>
+      <div class="item">
+        <img src="static/images/icml/error_analysis_gpt4o_pnsxy_counterfactual.png" alt="results" width="80%" class="center"/>
+        <h2 class="subtitle has-text-centered">
+         <small></small>
+       </h2>
+      </div>
+      <div class="item">
+        <img src="static/images/icml/error_analysis_gpt4o_pnsxy_factual.png" alt="results" width="80%" class="center"/>
+        <h2 class="subtitle has-text-centered">
+         <small></small>
+       </h2>
+      </div>
   </div>
 </div>
 </div>
 </section>
--->
-
 <!-- End image carousel -->
 
 <!-- Procedure -->

@@ -254,6 +254,7 @@
             <p align="center">
               <img src="static/images/te_decomp.png" alt="TE = NDE + NIE" width="30%" class="center"/>
             </p>
+            <br><br>
 
             In the current iteration of <ccr>CCR</ccr>.<gb>GB</gb>, we devise CCR tasks that leverage a particular compositional form of the probability of necessity and 
             sufficiency (PNS; <a href="https://dl.acm.org/doi/pdf/10.1145/3501714.3501735?casa_token=OsspeywzK1sAAAAA:cvfvbzXlkXCGsE3UlCCqGDdFfX9vMcT9p6GA6KFn52iVCB74Re70V3jarMMyr17EAhQivPmyphA" target="_blank">Pearl 1999</a>).
@@ -271,7 +272,7 @@
             </p>
 
             We exploit this property to construct reasoning tasks that require the LM to reason correctly over both local PNS values (e.g., $(PNS_{AC}$)) as well as their compositions. 
-            In the future, we aim to expand `CCR.GB` to incorporate additional compositional formulae for popular causal estimands. 
+            In the future, we aim to expand <ccr>CCR</ccr>.<gb>GB</gb> to incorporate additional compositional formulae for popular causal estimands. 
           </p>
         </div>
       </div>
@@ -366,7 +367,34 @@
         <h2 class="title is-3">LMs as counterfactual data simulators</h2>
         <div class="content has-text-justified">
           <p>
-            <ccr>CCR</ccr>.<gb>GB</gb> treats LMs as <i>counterfactual data simulators</i>...
+            Instead of directly prompting the model to perform formal causal inference 
+            (as in <a href="https://proceedings.neurips.cc/paper_files/paper/2023/file/631bb9434d718ea309af82566347d607-Paper-Conference.pdf" target="_blank">Jin et al. 2023</a>), 
+            <ccr>CCR</ccr>.<gb>GB</gb> treats LMs as <i>counterfactual data simulators</i>. Series of yes/no questions are submitted to the LM, 
+            and the resulting binary response vectors are treated as samples from observational and interventional distributions. These binary response vectors are then 
+            used to compute PNS estimates.
+            <br><br>
+            
+            Finally, <ccr>CCR</ccr>.<gb>GB</gb> allows for evaluation at all three levels of Pearl's Causal Hierarchy.
+            <p>
+              <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
+                <li><hi>Associational.</hi></li>
+                  <ul style="line-height:1.75;list-style-type:'&mdash;&#xFE0E; ';">
+                    <li><b>Metrics.</b> Classic metrics can be used to compare factual query response vectors to ground truth (e.g., F1, accuracy, precision, etc.).</li>
+                  </ul>
+                <li><hi>Interventional.</hi></li>
+                  <ul style="line-height:1.75;list-style-type:'&mdash;&#xFE0E; ';">
+                    <li><b>Metrics.</b> Classic metrics like F1 score can also be used to compare interventional response vectors to ground truth.</li>
+                  </ul>
+                <li><hi>Counterfactual.</hi> Causal reasoning.</li>
+                  <ul style="line-height:1.75;list-style-type:'&mdash;&#xFE0E; ';">
+                    <li><b>Metrics.</b> To assess counterfactual reasoning, we can estimate the PNS from the paired interventional response vectors 
+                      and compare these estimates to the ground truth PNS for each quantity of interest in our causal world model. 
+                      Approximation errors can be measured as the user desires, though we use the relative absolute error (RAE). We compute the RAE for the **external validity** 
+                      of PNS estimates (compared to ground truth) and for the **internal consistency** of PNS compositions. In the latter case, estimates for theoretically equivalent 
+                      PNS compositions are compared to each other, not to ground truth. </li>
+                  </ul>
+              </ul>
+            </p>
           </p>
         </div>
       </div>
@@ -412,33 +440,50 @@
   </div>
 </section>
 
+<!-- Procedure -->
+<section class="hero">
+  <div class="hero-body">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Preliminary results</h2>
+        <div class="content has-text-justified">
+          <p>
+            As proof of concept, we demonstrate the design of CCR tasks for language models in the LLama, Phi, and GPT families. 
+            On a math word problem, our framework revealed a range of **taxonomically distinct error patterns**. Additionally,
+            **CCR errors increased with the complexity of causal paths** for all models except o1. We observed several failure modes:
+
+            <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
+              <li>Failure to correctly extract causal relations.</li>
+              <li>Incorrect logic despite correct causal relation extraction.</li>
+              <li>Truncated reasoning process.</li>
+              <li>Poor numeracy.</li>
+            </ul>
+
+            Results validate the utility and correct implementation of our framework, where success can be achieved by a sufficiently capable LM (e.g., o1 on the given task). We recommend that users 
+            push the limits of the next wave of reasoning models by sampling increasingly complex causal DAGs from our task generator. 
+            <br><br>
+
+            See <a href="https://arxiv.org/abs/2503.04556" target="_blank">Maasch et al. 2025</a> for further discussions of preliminary results.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
 <!-- Image carousel -->
 <section class="hero is-small">
   <div class="hero-body">
-    <h2 class="title is-3">Preliminary results</h2>
-    As proof of concept, we demonstrate the design of CCR tasks for language models in the LLama, Phi, and GPT families. 
-    On a math word problem, our framework revealed a range of taxonomically distinct error patterns. Additionally,
-     CCR errors increased with the complexity of causal paths for all models except o1. Results validate the utility and correct 
-     implementation of our framework, where success can be achieved by a sufficiently capable LM (e.g., o1 on the given task). We recommend that users 
-     push the limits of the new wave of reasoning models by sampling increasingly complex causal DAGs from our task generator. <br><br>
-
-     See <a href="https://arxiv.org/abs/2503.04556" target="_blank">Maasch et al. 2025</a> for further discussions of preliminary results.
-     <br><br>
-     
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item">
-          <img src="static/images/icml/relative_errors_long.jpg" alt="results" width="80%" class="center"/>
+          <img src="static/images/icml/relative_errors_long.jpg" alt="results" width="40%" class="center"/>
           <h2 class="subtitle has-text-centered">
            <small></small>
          </h2>
        </div>
-        <div class="item">
-          <img src="static/images/icml/correctness_by_quantity_top_4.jpg" alt="results" width="80%" class="center"/>
-          <h2 class="subtitle has-text-centered">
-            <small></small>
-          </h2>
-        </div>
        <div class="item">
         <img src="static/images/icml/errors_by_quantity.jpg" alt="results" width="80%" class="center"/>
         <h2 class="subtitle has-text-centered">

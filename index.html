@@ -216,6 +216,13 @@
               <li><hi>Random CCR task generator.</hi> Open source code for on-demand task generation according to user specifications (graphical complexity, task theme, etc.).</li>
               <li><hi>Pre-sampled benchmark dataset.</hi> A static dataset sampled from the random task generator, as a starting point for community benchmarking. </li>
             </ul>
+            <br>
+            <br>
+            <b>Quick start:</b> See this <a href="https://github.com/jmaasch/ccr/blob/main/demos/demo_clinical_notes.ipynb"
+            target="_blank">Jupyter Notebook demo</a> for a quick start on how to use our static dataset and task generators for evaluation, 
+            including <b>recommended performance metrics</b>. Additional helpful code can be found in our <a href="https://github.com/jmaasch/ccr"
+            target="_blank">GitHub repository</a>. 
+            
           </p>
         </div>
       </div>
@@ -389,8 +396,8 @@
                   <ul style="line-height:1.75;list-style-type:'&mdash;&#xFE0E; ';">
                     <li><b>Metrics.</b> To assess counterfactual reasoning, we can estimate the PNS from the paired interventional response vectors 
                       and compare these estimates to the ground truth PNS for each quantity of interest in our causal world model. 
-                      Approximation errors can be measured as the user desires, though we use the relative absolute error (RAE). We compute the RAE for the **external validity** 
-                      of PNS estimates (compared to ground truth) and for the **internal consistency** of PNS compositions. In the latter case, estimates for theoretically equivalent 
+                      Approximation errors can be measured as the user desires, though we use the relative absolute error (RAE). We compute the RAE for the <b>external validity</b> 
+                      of PNS estimates (compared to ground truth) and for the <b>internal consistency</b> of PNS compositions. In the latter case, estimates for theoretically equivalent 
                       PNS compositions are compared to each other, not to ground truth. </li>
                   </ul>
               </ul>
@@ -409,49 +416,12 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Three levels of evaluation</h2>
-        This framework allows for evaluation at all three levels of Pearl's Causal Hierarchy. For our set of factual queries, 
-        let $\mathbf{f}_{\text{true}}$ and $\mathbf{f}_{\text{pred}}$ be ground truth and the vector of model responses, respectively. 
-        Let $\mathbf{do(0)}_{\text{true}}$, $\mathbf{do(0)}_{\text{true}}$ and $\mathbf{do(0)}_{\text{pred}}$, $\mathbf{do(1)}_{\text{pred}}$ be ground truth and the vector of model responses for 
-        interventional queries under $do(cause = 0)$ and $do(cause = 1)$, respectively.
-        <div class="content has-text-justified">
-          <p>
-            <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
-              <li><hi>Associational.</hi></li>
-                <ul style="line-height:1.75;list-style-type:'&mdash;&#xFE0E; ';">
-                  <li><b>Metrics.</b> $\theta(\mathbf{f}_{\text{true}},\mathbf{f}_{\text{pred}})$ for $\theta$ in {F1,precision,recall,accuracy,…}.</li>
-                </ul>
-              <li><hi>Interventional.</hi></li>
-                <ul style="line-height:1.75;list-style-type:'&mdash;&#xFE0E; ';">
-                  <li><b>Metrics.</b> $\theta(\mathbf{do(0)}_{\text{true}},\mathbf{do(0)}_{\text{pred}})$, 
-                    $\theta(\mathbf{do(1)}_{\text{true}},\mathbf{do(1)}_{\text{true}})$ for $\theta$ in {F1,precision,recall,accuracy,…}.</li>
-                </ul>
-              <li><hi>Counterfactual.</hi> Causal reasoning.</li>
-                <ul style="line-height:1.75;list-style-type:'&mdash;&#xFE0E; ';">
-                  <li><b>Metrics.</b> External validity RAE PNS using both $\mathbf{do(0)}_{\text{pred}}$ and $\mathbf{do(0)}_{\text{pred}}$. Compositional causal reasoning. 
-                    Internal consistency and external validity of compositions.</li>
-                </ul>
-            </ul>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-</section>
-
-<!-- Procedure -->
-<section class="hero">
-  <div class="hero-body">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
         <h2 class="title is-3">Preliminary results</h2>
         <div class="content has-text-justified">
           <p>
-            As proof of concept, we demonstrate the design of CCR tasks for language models in the LLama, Phi, and GPT families. 
-            On a math word problem, our framework revealed a range of **taxonomically distinct error patterns**. Additionally,
-            **CCR errors increased with the complexity of causal paths** for all models except o1. We observed several failure modes:
+            As proof of concept, <a href="https://arxiv.org/abs/2503.04556" target="_blank">Maasch et al. (2025)</a> demonstrate the design of CCR tasks for language models in the LLama, Phi, and GPT families. 
+            On a math word problem, our framework revealed a range of <b>taxonomically distinct error patterns</b>. Additionally,
+            <b>CCR errors increased with the complexity of causal paths</b> for all models except o1. We observed several failure modes:
 
             <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
               <li>Failure to correctly extract causal relations.</li>
@@ -479,7 +449,7 @@
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item">
-          <img src="static/images/icml/relative_errors_long.jpg" alt="results" width="40%" class="center"/>
+          <img src="static/images/icml/relative_errors_long.jpg" alt="results" width="60%" class="center"/>
           <h2 class="subtitle has-text-centered">
            <small></small>
          </h2>

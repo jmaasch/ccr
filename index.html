@@ -246,8 +246,29 @@
 
             While explicitly combining compositional and causal reasoning evaluation in LMs is new, the intersection of compositionality 
             and causality already enjoys a rich mathematical framework: the formalisms and methods of graphical modeling and causal 
-            inference. See the figures below for further intuition on this intersection.
-            <br><br>
+            inference. A classic example of compositionality in causal inference is the decomposition of the total effect in linear structural causal models (SCMs).
+            When causal functions are linear, the total causal effect decomposes as a sum of the direct and indirect effect. 
+            A compositionally consistent causal reasoning agent should correctly infer that TE is equivalent to NDE + NIE.
+            
+            <p align="center">
+              <img src="static/images/te_decomp.png" alt="TE = NDE + NIE" width="30%" class="center"/>
+            </p>
+
+            In the current iteration of <ccr>CCR</ccr>.<gb>GB</gb>, we devise CCR tasks that leverage a particular compositional form of the probability of necessity and 
+            sufficiency (PNS; [<a href="https://dl.acm.org/doi/pdf/10.1145/3501714.3501735?casa_token=OsspeywzK1sAAAAA:cvfvbzXlkXCGsE3UlCCqGDdFfX9vMcT9p6GA6KFn52iVCB74Re70V3jarMMyr17EAhQivPmyphA" target="_blank">Pearl 1999</a>]).
+
+            <p align="center">
+                <img src="https://jmaasch.github.io/ccr_benchmark/static/images/pns.png" width="700">
+            </p>
+
+            As shown in <a href="https://arxiv.org/abs/2503.04556" target="_blank">Maasch et al. 2025</a>, the PNS composes multiplicatively over the biconnected components of the causal DAG.
+
+            <p align="center">
+                <img src="https://jmaasch.github.io/ccr_benchmark/static/images/pns_comp.png" width="500">
+            </p>
+
+            We exploit this property to construct reasoning tasks that require the LM to reason correctly over both local PNS values (e.g., $(PNS_{AC}$)) as well as their compositions. 
+            In the future, we aim to expand `CCR.GB` to incorporate additional compositional formulae for popular causal estimands. 
           </p>
         </div>
       </div>

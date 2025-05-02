@@ -376,7 +376,9 @@
           <p>
             Instead of directly prompting the model to perform formal causal inference 
             (as in <a href="https://proceedings.neurips.cc/paper_files/paper/2023/file/631bb9434d718ea309af82566347d607-Paper-Conference.pdf" target="_blank">Jin et al. 2023</a>), 
-            <ccr>CCR</ccr>.<gb>GB</gb> treats LMs as <i>counterfactual data simulators</i>. Series of yes/no questions are submitted to the LM, 
+            <ccr>CCR</ccr>.<gb>GB</gb> treats LMs as <i>counterfactual data simulators</i> 
+            (as in <a href="https://proceedings.neurips.cc/paper_files/paper/2024/file/d5a1f97d2b922da92e880d13b7d2bf02-Paper-Conference.pdf" 
+            target="_blank">Gonzalez and Nori 2024</a>, <a href="https://arxiv.org/abs/2410.03767" target="_blank">Hüyük et al. 2025</a>). Series of yes/no questions are submitted to the LM, 
             and the resulting binary response vectors are treated as samples from observational and interventional distributions. These binary response vectors are then 
             used to compute PNS estimates.
             <br><br>
@@ -392,7 +394,7 @@
                   <ul style="line-height:1.75;list-style-type:'&mdash;&#xFE0E; ';">
                     <li><b>Metrics.</b> Classic metrics like F1 score can also be used to compare interventional response vectors to ground truth.</li>
                   </ul>
-                <li><hi>Counterfactual.</hi> Causal reasoning.</li>
+                <li><hi>Counterfactual.</hi></li>
                   <ul style="line-height:1.75;list-style-type:'&mdash;&#xFE0E; ';">
                     <li><b>Metrics.</b> To assess counterfactual reasoning, we can estimate the PNS from the paired interventional response vectors 
                       and compare these estimates to the ground truth PNS for each quantity of interest in our causal world model. 

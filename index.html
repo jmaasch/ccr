@@ -258,7 +258,7 @@
             We define CCR as the ability to correctly infer <ccr>(1)</ccr> how local causal measures
             compose into global causal measures and <gb>(2)</gb> how global
             causal measures decompose into local causal measures, in
-            both <b>factual and counterfactual worlds</b>. By extension, this requires reasoning over the propagation
+            both factual and counterfactual worlds. By extension, this requires reasoning over the propagation
             of causal quantities through graphs. Thus, our framework also implicitly tests for graphical reasoning. 
             <br><br>
 
@@ -270,7 +270,7 @@
             While explicitly combining compositional and causal reasoning evaluation in LMs is new, the intersection of compositionality 
             and causality already enjoys a rich mathematical framework: the formalisms and methods of graphical modeling and causal 
             inference. A classic example of compositionality in causal inference is the decomposition of the total effect in linear structural causal models (SCMs).
-            When causal functions are linear, the total causal effect decomposes as a sum of the direct and indirect effect. 
+            When causal functions are linear, the total causal effect decomposes as a sum of the natural direct effect and natural indirect effect. 
             A compositionally consistent causal reasoning agent should correctly infer that TE is equivalent to NDE + NIE:
             <br><br>
             
@@ -294,7 +294,7 @@
                 <img src="https://jmaasch.github.io/ccr_benchmark/static/images/pns_comp.png" width="350">
             </p>
 
-            We exploit this property to construct reasoning tasks that require the LM to reason correctly over both local PNS values (e.g., $(PNS_{AC}$)) as well as their compositions. 
+            We exploit this property to construct reasoning tasks that require the LM to reason correctly over both local PNS values (e.g., $PNS_{AC}$) as well as their compositions. 
             In the future, we aim to expand <ccr>CCR</ccr>.<gb>GB</gb> to incorporate additional compositional formulae for popular causal estimands. 
           </p>
         </div>
@@ -439,8 +439,8 @@
         <div class="content has-text-justified">
           <p>
             As proof of concept, <a href="https://arxiv.org/abs/2503.04556" target="_blank">Maasch et al. (2025)</a> demonstrate the design of CCR tasks for language models in the LLama, Phi, and GPT families. 
-            On a math word problem, our framework revealed a range of taxonomically distinct error patterns. Additionally,
-            CCR errors increased with the complexity of causal paths for all models except o1. We observed several failure modes:
+            On a simple math word problem, this framework revealed a range of taxonomically distinct error patterns. Additionally,
+            CCR errors increased with the complexity of causal paths for all models except o1. Preliminary error analyses revealed several failure modes:
 
             <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
               <li>Failure to correctly extract causal relations.</li>
@@ -449,7 +449,7 @@
               <li>Poor numeracy.</li>
             </ul>
 
-            Results validate the utility and correct implementation of our framework, where success can be achieved by a sufficiently capable LM (e.g., o1 on the given task). We recommend that users 
+            Results validate the utility and correct implementation of our framework, where success can be achieved by a sufficiently capable LM (e.g., o1 on the simple toy task). We recommend that users 
             push the limits of the next wave of reasoning models by sampling increasingly complex causal DAGs from our task generator. 
             <br><br>
 

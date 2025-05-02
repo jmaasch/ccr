@@ -249,6 +249,7 @@
             inference. A classic example of compositionality in causal inference is the decomposition of the total effect in linear structural causal models (SCMs).
             When causal functions are linear, the total causal effect decomposes as a sum of the direct and indirect effect. 
             A compositionally consistent causal reasoning agent should correctly infer that TE is equivalent to NDE + NIE.
+            <br><br>
             
             <p align="center">
               <img src="static/images/te_decomp.png" alt="TE = NDE + NIE" width="30%" class="center"/>
@@ -256,15 +257,17 @@
 
             In the current iteration of <ccr>CCR</ccr>.<gb>GB</gb>, we devise CCR tasks that leverage a particular compositional form of the probability of necessity and 
             sufficiency (PNS; [<a href="https://dl.acm.org/doi/pdf/10.1145/3501714.3501735?casa_token=OsspeywzK1sAAAAA:cvfvbzXlkXCGsE3UlCCqGDdFfX9vMcT9p6GA6KFn52iVCB74Re70V3jarMMyr17EAhQivPmyphA" target="_blank">Pearl 1999</a>]).
+            <br><br>
 
             <p align="center">
-                <img src="https://jmaasch.github.io/ccr_benchmark/static/images/pns.png" width="700">
+                <img src="https://jmaasch.github.io/ccr_benchmark/static/images/pns.png" width="400">
             </p>
 
             As shown in <a href="https://arxiv.org/abs/2503.04556" target="_blank">Maasch et al. 2025</a>, the PNS composes multiplicatively over the biconnected components of the causal DAG.
+            <br><br>
 
             <p align="center">
-                <img src="https://jmaasch.github.io/ccr_benchmark/static/images/pns_comp.png" width="500">
+                <img src="https://jmaasch.github.io/ccr_benchmark/static/images/pns_comp.png" width="350">
             </p>
 
             We exploit this property to construct reasoning tasks that require the LM to reason correctly over both local PNS values (e.g., $(PNS_{AC}$)) as well as their compositions. 
@@ -277,7 +280,7 @@
 </div>
 </section>
 
-<!-- Image carousel -->
+<!-- Image carousel 
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
@@ -307,6 +310,7 @@
 </div>
 </div>
 </section>
+-->
 
 <!-- End image carousel -->
 
@@ -345,6 +349,7 @@
   </div>
 </div>
 </section>
+
 
 <!-- Procedure -->
 <section class="hero">

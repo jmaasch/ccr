@@ -189,7 +189,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3"><ccr>CCR</ccr>.<gb>GB</gb>: A <gb>G</gb>enerative <gb>B</gb>enchmark for <ccr>C</ccr>ompositional <ccr>C</ccr>ausal <ccr>R</ccr>easoning Evaluation</h2>
+        <h2 class="title is-3"><b>CCR.BG</b>: A <gb>G</gb>enerative <gb>B</gb>enchmark for <ccr>C</ccr>ompositional <ccr>C</ccr>ausal <ccr>R</ccr>easoning Evaluation</h2>
         <div class="content has-text-justified">
           <p>
             Causal reasoning and compositional reasoning are 
@@ -198,7 +198,7 @@
             evaluation methods. Our work considers both behaviors simultaneously, under the umbrella of <b>compositional causal reasoning (CCR)</b>: 
             the ability to infer how causal measures compose 
             and, equivalently, how causal quantities propagate 
-            through graphs. The <ccr>CCR</ccr>.<gb>GB</gb> benchmark is designed to measure CCR at <b>all 
+            through graphs. The <b>CCR.BG</b> benchmark is designed to measure CCR at <b>all 
             three levels of Pearl's Causal Hierarchy</b>: (1) associational, (2) interventional, and (3) counterfactual.
           </p>
           <p style="text-align:center">
@@ -211,7 +211,7 @@
           </p>
           <br>
           <p>
-            <ccr>CCR</ccr>.<gb>GB</gb> provides two artifacts:
+            <b>CCR.BG</b> provides two artifacts:
             <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
               <li><hi>Random CCR task generator.</hi> Open source code for on-demand task generation according to user specifications (graphical complexity, task theme, etc.). 
                 Find our task generators on <a href="https://github.com/jmaasch/ccr" target="_blank">GitHub</a>. We currently offer four themes for random task 
@@ -279,7 +279,7 @@
             </p>
             <br><br>
 
-            In the current iteration of <ccr>CCR</ccr>.<gb>GB</gb>, we devise CCR tasks that leverage a particular compositional form of the probability of necessity and 
+            In the current iteration of <b>CCR.BG</b>, we devise CCR tasks that leverage a particular compositional form of the probability of necessity and 
             sufficiency (PNS; <a href="https://dl.acm.org/doi/pdf/10.1145/3501714.3501735?casa_token=OsspeywzK1sAAAAA:cvfvbzXlkXCGsE3UlCCqGDdFfX9vMcT9p6GA6KFn52iVCB74Re70V3jarMMyr17EAhQivPmyphA" target="_blank">Pearl 1999</a>).
             <br><br>
 
@@ -295,7 +295,7 @@
             </p>
 
             We exploit this property to construct reasoning tasks that require the LM to reason correctly over both local PNS values (e.g., $PNS_{AC}$) as well as their compositions. 
-            In the future, we aim to expand <ccr>CCR</ccr>.<gb>GB</gb> to incorporate additional compositional formulae for popular causal estimands. 
+            In the future, we aim to expand <b>CCR.BG</b> to incorporate additional compositional formulae for popular causal estimands. 
           </p>
         </div>
       </div>
@@ -312,7 +312,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Disentangling signal from noise in causal reasoning evaluation</h2>
         <div class="content has-text-justified">
-          Contemporary AI faces a persistent recall-reasoning gap. Closing this gap will require that genuine reasoning is rigorously differentiated from alternative phenomena, such as training data recall. <ccr>CCR</ccr>.<gb>GB</gb> is designed with this in mind.
+          Contemporary AI faces a persistent recall-reasoning gap. Closing this gap will require that genuine reasoning is rigorously differentiated from alternative phenomena, such as training data recall. <b>CCR.BG</b> is designed with this in mind.
           <p>
             <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
               <li><hi>A generative approach.</hi> The automated task generator allows users to randomly sample new CCR tasks, mitigating risks 
@@ -393,19 +393,20 @@
           <p>
             Instead of directly prompting the model to perform formal causal inference 
             (as in <a href="https://proceedings.neurips.cc/paper_files/paper/2023/file/631bb9434d718ea309af82566347d607-Paper-Conference.pdf" target="_blank">Jin et al. 2023</a>), 
-            <ccr>CCR</ccr>.<gb>GB</gb> treats LMs as <i>counterfactual data simulators</i> 
+            <b>CCR.BG</b> treats LMs as <i>counterfactual data simulators</i> 
             (as in <a href="https://proceedings.neurips.cc/paper_files/paper/2024/file/d5a1f97d2b922da92e880d13b7d2bf02-Paper-Conference.pdf" 
             target="_blank">Gonzalez and Nori 2024</a>, <a href="https://arxiv.org/abs/2410.03767" target="_blank">Hüyük et al. 2025</a>). Series of yes/no questions are submitted to the LM, 
             and the resulting binary response vectors are treated as samples from observational and interventional distributions. These binary response vectors are then 
             used to compute PNS estimates.
             <br><br>
             
-            Responses generated using <ccr>CCR</ccr>.<gb>GB</gb> allow for reasoning evaluation at all three levels of Pearl's Causal Hierarchy.
+            Responses generated using <b>CCR.BG</b> allow for reasoning evaluation at all three levels of Pearl's Causal Hierarchy.
             <p>
               <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
                 <li><hi>Associational.</hi></li>
                   <ul style="line-height:1.75;list-style-type:'&mdash;&#xFE0E; ';">
-                    <li><b>Metrics.</b> Classic metrics can be used to compare factual query response vectors to ground truth (e.g., F1, accuracy, precision, etc.).</li>
+                    <li><b>Metrics.</b> Classic metrics can be used to compare factual query response vectors to ground truth (e.g., F1, accuracy, precision, etc.). 
+                      This can also be considered a measure of logical reasoning, as causal functions are logical operators. </li>
                   </ul>
                 <li><hi>Interventional.</hi></li>
                   <ul style="line-height:1.75;list-style-type:'&mdash;&#xFE0E; ';">

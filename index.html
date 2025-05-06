@@ -370,8 +370,8 @@
               <li><hi>Interventional query pairs.</hi> Finally, we construct paired interventional queries corresponding to interventions $do(X = True)$ and $do(X = False)$. 
                 Each interventional query is individually concatenated to a copy of the causal context + sample context. 
                 As with factual queries, all interventional queries are phrased as yes/no questions. Responses to interventional prompts are used to compute causal effects $p(y \mid do(X = True))$ 
-                and $p(y \mid do(X = False))$. As matched pairs over the exact same sample context (i.e., the same exogenous variable vector), these causal effects also used to compute 
-                the PNS, a counterfactual quantity: $p(y_x,y'_{x'}). In this setting, the PNS is equivalent to p(y \mid do(X = True)) - p(y \mid do(X = False))$ (as $Y$ is monotonic in $X$). Thus, evaluation on 
+                and $p(y \mid do(X = False))$. As matched pairs over the exact same sample context (i.e., the same exogenous variable vector), these causal effects are also used to compute 
+                a counterfactual quantity: the PNS, $p(y_x,y'_{x'})$. In this setting, the PNS is equivalent to $p(y \mid do(X = True)) - p(y \mid do(X = False))$ (as $Y$ is monotonic in $X$). Thus, evaluation on 
                 interventional prompts tests for reasoning at both the <b>interventional and counterfactual rungs</b> of Pearl's Causal Hierarchy.</li>
             </ul>
             <img style="vertical-align:middle" src='static/images/prompt.png' class="center" width="90%">

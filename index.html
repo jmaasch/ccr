@@ -230,16 +230,17 @@
             target="_blank">GitHub repository</a>. 
             <br><br>
 
-            Below, we cover the following topics.
-            <ol>
+            <gb>Table of Contents</gb>
+            <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
               <li><a href="#comp_cause">Compositionality + causality</a></li>
               <li><a href="#disentangle">Disentangling signal from noise in causal reasoning evaluation</a></li>
               <li><a href="#task_gen">CCR task generation</a></li>
               <li><a href="#data_sim">LMs as counterfactual data simulators</a></li>
+              <li><a href="#metrics">Performance metrics: compositional consistency in causal reasoning</a></li>
               <li><a href="#results">Preliminary results</a></li>
               <li><a href="#slides">Paper slides</a></li>
-              <li><a href="#bibtex">How to cite (BibTeX)</a></li>
-            </ol>  
+              <li><a href="#bibtex">How to cite this work (BibTeX)</a></li>
+            </ul>  
             
           </p>
         </div>
@@ -400,8 +401,23 @@
             target="_blank">Gonzalez and Nori 2024</a>, <a href="https://arxiv.org/abs/2410.03767" target="_blank">Hüyük et al. 2025</a>). Series of yes/no questions are submitted to the LM, 
             and the resulting binary response vectors are treated as samples from observational and interventional distributions. These binary response vectors are then 
             used to compute PNS estimates.
-            <br><br>
-            
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Procedure -->
+<section class="hero">
+  <div class="hero-body">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" id="metrics">Performance metrics: compositional consistency in causal reasoning</h2>
+        <div class="content has-text-justified">
+          <p>
             Responses generated using <b>CCR.GB</b> allow for reasoning evaluation at all three levels of Pearl's Causal Hierarchy.
             <p>
               <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
@@ -543,8 +559,8 @@
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
-      <h2 class="title" id="bibtex">How to cite</h2>
-      Please cite our work using the following BibTeX.
+      <h2 class="title" id="bibtex">How to cite this work</h2>
+      Please cite our work using the following BibTeX.<br><br>
       <pre><code>
       @inproceedings{maasch2025ccr,
         title={Compositional Causal Reasoning Evaluation in Language Models},

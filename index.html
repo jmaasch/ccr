@@ -228,20 +228,6 @@
             target="_blank">Jupyter Notebook demo</a> for a quick start on how to use our static dataset and task generators for evaluation, 
             including <b>recommended performance metrics</b>. Additional helpful code can be found in our <a href="https://github.com/jmaasch/ccr"
             target="_blank">GitHub repository</a>. 
-            <br><br>
-
-            <b>Table of Contents</b>
-            <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
-              <li><a href="#comp_cause">Compositionality + causality</a></li>
-              <li><a href="#disentangle">Disentangling signal from noise in causal reasoning evaluation</a></li>
-              <li><a href="#task_gen">CCR task generation</a></li>
-              <li><a href="#data_sim">LMs as counterfactual data simulators</a></li>
-              <li><a href="#metrics">Performance metrics: compositional consistency in causal reasoning</a></li>
-              <li><a href="#results">Preliminary results</a></li>
-              <li><a href="#slides">Paper slides</a></li>
-              <li><a href="#bibtex">How to cite this work (BibTeX)</a></li>
-            </ul>  
-            
           </p>
         </div>
       </div>
@@ -249,6 +235,32 @@
   </div>
 </div>
 </section>
+
+<!-- Procedure -->
+<section class="hero">
+  <div class="hero-body">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" id="contents">Table of contents</h2>
+        <div class="content has-text-justified">
+          <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
+            <li><a href="#comp_cause">Compositionality + causality</a></li>
+            <li><a href="#disentangle">Disentangling signal from noise in causal reasoning evaluation</a></li>
+            <li><a href="#task_gen">CCR task generation</a></li>
+            <li><a href="#data_sim">LMs as counterfactual data simulators</a></li>
+            <li><a href="#metrics">Performance metrics: compositional consistency in causal reasoning</a></li>
+            <li><a href="#results">Preliminary results</a></li>
+            <li><a href="#slides">Paper slides</a></li>
+            <li><a href="#bibtex">How to cite this work (BibTeX)</a></li>
+          </ul>  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
 
 <section class="hero">
   <div class="hero-body">
@@ -383,23 +395,24 @@
 </div>
 </section>
 
+
 <!-- Image carousel -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-       <div class="item"> 
-        <img style="vertical-align:middle" src='static/images/candy_prompt.png' class="center" width="90%">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <img style="vertical-align:middle" src='static/images/candy_prompt.png' class="center" alt="prompt" width="60%">
+          <h2 class="subtitle has-text-centered">
+           <small>Example CandyParty task, which requires quantitative reasoning.</small>
+         </h2>
+       </div>
+       <div class="item">
+        <img style="vertical-align:middle" src='static/images/prompt.png' class="center" alt="prompt" width="60%">
         <h2 class="subtitle has-text-centered">
-         <small>Example CandyParty task.</small>
-       </h2>
-     </div>
-     <div id="results-carousel" class="carousel results-carousel">
-      <div class="item"> 
-        <img style="vertical-align:middle" src='static/images/prompt.png' class="center" width="90%">
-        <h2 class="subtitle has-text-centered">
-         <small>Example ClinicalNotes task.</small>
-       </h2>
-     </div>
+          <small>Example ClinicalNotes task, which does not require quantitative reasoning.</small>
+        </h2>
+      </div>
   </div>
 </div>
 </div>

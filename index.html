@@ -232,13 +232,13 @@
 
             Below, we cover the following topics.
             <ol>
-              <li>Compositionality + causality</li>
-              <li>Disentangling signal from noise in causal reasoning evaluation</li>
-              <li>CCR task generation</li>
-              <li>LMs as counterfactual data simulators</li>
-              <li>Preliminary results</li>
-              <li>Paper slides</li>
-              <li>BibTeX</li>
+              <li><a href="#comp_cause">Compositionality + causality</a></li>
+              <li><a href="#disentangle">Disentangling signal from noise in causal reasoning evaluation</a></li>
+              <li><a href="#task_gen">CCR task generation</a></li>
+              <li><a href="#data_sim">LMs as counterfactual data simulators</a></li>
+              <li><a href="#results">Preliminary results</a></li>
+              <li><a href="#slides">Paper slides</a></li>
+              <li><a href="#bibtex">How to cite (BibTeX)</a></li>
             </ol>  
             
           </p>
@@ -254,7 +254,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Compositionality + causality</h2>
+        <h2 class="title is-3" id="comp_cause">Compositionality + causality</h2>
         <div class="content has-text-justified">
           <p>
             We define CCR as the ability to correctly infer <ccr>(1)</ccr> how local causal measures
@@ -312,7 +312,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Disentangling signal from noise in causal reasoning evaluation</h2>
+        <h2 class="title is-3" id="disentangle">Disentangling signal from noise in causal reasoning evaluation</h2>
         <div class="content has-text-justified">
           Contemporary AI faces a persistent recall-reasoning gap. Closing this gap will require that genuine reasoning is rigorously differentiated from alternative phenomena, such as recall of previously seen information. <b>CCR.GB</b> is designed with this in mind.
           <p>
@@ -350,7 +350,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">CCR task generation</h2>
+        <h2 class="title is-3" id="task_gen">CCR task generation</h2>
         <div class="content has-text-justified">
           <p>
             <ul style="line-height:1.75;list-style-type:'&#10022;&#xFE0E; ';">
@@ -390,7 +390,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">LMs as counterfactual data simulators</h2>
+        <h2 class="title is-3" id="data_sim">LMs as counterfactual data simulators</h2>
         <div class="content has-text-justified">
           <p>
             Instead of directly prompting the model to perform formal causal inference 
@@ -438,7 +438,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Preliminary results</h2>
+        <h2 class="title is-3" id="results">Preliminary results</h2>
         <div class="content has-text-justified">
           <p>
             As proof of concept, <a href="https://arxiv.org/abs/2503.04556" target="_blank">Maasch et al. (2025)</a> demonstrate the design of CCR tasks for language models in the LLama, Phi, and GPT families. 
@@ -518,7 +518,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Paper slides</h2>
+        <h2 class="title is-3" id="slides">Paper slides</h2>
       </div>
     </div>
   </div>
@@ -543,7 +543,8 @@
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
+      <h2 class="title" id="bibtex">How to cite</h2>
+      Please cite our work using the following BibTeX.
       <pre><code>
       @inproceedings{maasch2025ccr,
         title={Compositional Causal Reasoning Evaluation in Language Models},

@@ -271,7 +271,7 @@
         <div class="content has-text-justified">
           <p>
             We define CCR as the ability to correctly infer <ccr>(1)</ccr> how local causal measures
-            compose into global causal measures and <gb>(2)</gb> how global
+            compose into global causal measures and <ccr>(2)</ccr> how global
             causal measures decompose into local causal measures, in
             both factual and counterfactual worlds. By extension, this requires reasoning over the propagation
             of causal quantities through graphs. Thus, our framework also implicitly tests for graphical reasoning. 
@@ -414,7 +414,7 @@
         </h2>
       </div>
       <div class="item">
-        <img style="vertical-align:middle" src='static/images/prompt.png' class="center" alt="prompt" width="60%">
+        <img style="vertical-align:middle" src='static/images/flower_prompt.png' class="center" alt="prompt" width="60%">
         <h2 class="subtitle has-text-centered">
           <small>A simple FlowerGarden task, which does not require quantitative reasoning.</small>
         </h2>
@@ -476,8 +476,15 @@
                     <li><b>Metrics.</b> To assess counterfactual reasoning, we can estimate the PNS from the paired interventional response vectors 
                       and compare these estimates to the ground truth PNS for each quantity of interest in our causal world model. 
                       Approximation errors can be measured as the user desires, though we use the relative absolute error (RAE). We compute the RAE for the <b>external validity</b> 
-                      of PNS estimates (compared to ground truth) and for the <b>internal consistency</b> of PNS compositions. In the latter case, estimates for theoretically equivalent 
-                      PNS compositions are compared to each other, not to ground truth. </li>
+                      of PNS estimates
+                      <p align="center" style="text-align:center">
+                        <img style="vertical-align:middle" src='static/images/external_validity.png' class="center" alt="dag" width="60%">
+                      </p>
+                      and for the <b>internal consistency</b> of PNS compositions 
+                      <p align="center" style="text-align:center">
+                        <img style="vertical-align:middle" src='static/images/internal_consistency.png' class="center" alt="dag" width="60%">
+                      </p>
+                    </li>
                   </ul>
               </ul>
               <br><br>
@@ -511,6 +518,7 @@
 
             <p align="center" style="text-align:center">
               <img style="vertical-align:middle" src='static/images/icml_task.png' class="center" alt="dag" width="40%">
+              <br><br>
               <small>Causal DAG of the simple CandyParty task used in <a href="https://arxiv.org/abs/2503.04556" target="_blank">Maasch et al. (2025)</a>.</small>
             </p>
             <br><br>

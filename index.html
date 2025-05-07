@@ -499,6 +499,12 @@
                     </li>
                   </ul>
               </ul>
+              <b>A note on sample size.</b> If evaluating an LM at the associational or interventional levels using classic metrics like F1 score, the user can choose to evaluate on any number of queries that
+              suits their needs. If evaluating at the counterfactual level to holistically assess the internal consistency and external validity of the model over the full causal 
+              structure, a relatively large number of sample contexts must be represented. The appropriate sample size will vary by complexity of the causal structure. For example: for each causal quantity of 
+              interest, <a href="https://arxiv.org/abs/2503.04556" target="_blank">Maasch et al. (2025)</a> sampled 1k sets of exogenous variables and replicated 
+              each five times. Such relatively large sample sizes are needed to preserve the compositional properties of the PNS in the finite sample setting. Thus, counterfactual reasoning 
+              evaluation is more expensive under this framework than interventional and associational reasoning evaluation.
             </p>
           </p>
         </div>

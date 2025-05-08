@@ -219,7 +219,7 @@
               <li><hi>Random CCR task generator.</hi> Open source code for on-demand task generation according to user specifications (graphical complexity, task theme, etc.). 
                 Find our task generators on <a href="https://github.com/jmaasch/ccr" target="_blank">GitHub</a>. We currently offer four themes for random task 
                 generation: CandyParty, FluVaccine, FlowerGarden, and ClinicalNotes. The ClinicalNotes theme is currently our most complex prompt setup, and was designed in collaboration 
-                with a <a href="#thanks">clinician</a> to loosely resemble real-world history and physical notes. </li>
+                with a <a href="#thanks">clinician</a> to loosely resemble real-world history and physical (H&P) notes. </li>
               <li><hi>Pre-sampled benchmark dataset.</hi> A static dataset sampled from the task generator, as a starting point for community benchmarking. 
                 Pre-sampled data can be found on <a href="https://huggingface.co/datasets/jmaasch/compositional_causal_reasoning"
                 target="_blank">Hugging Face</a>. Currently, pre-sampled data are available for the ClinicalNotes theme on simple causal graphs, 
@@ -307,7 +307,7 @@
             </p>
 
             As shown in <a href="https://arxiv.org/abs/2503.04556" target="_blank">Maasch et al. 2025</a>, the PNS composes multiplicatively over the biconnected components of the causal DAG when 
-            the outcome of interest is monotonic in the cause of interest.
+            each cause-effect pair of interest satisfies the monotonicity constraint noted above.
             <br><br>
 
             <p align="center">

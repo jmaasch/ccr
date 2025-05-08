@@ -449,7 +449,9 @@
             CCR.GB treats LMs as <i>counterfactual data simulators</i> 
             (as in <a href="https://proceedings.neurips.cc/paper_files/paper/2024/file/d5a1f97d2b922da92e880d13b7d2bf02-Paper-Conference.pdf" 
             target="_blank">Gonzalez and Nori 2024</a>, <a href="https://arxiv.org/abs/2410.03767" target="_blank">Hüyük et al. 2025</a>). Series of yes/no questions are submitted to the LM, 
-            and the resulting binary response vectors are treated as samples from observational and interventional distributions. These binary response vectors are then 
+            and the natural language responses are converted to their corresponding boolean value (e.g., using another LM as an extracter; see  
+            <a href="https://arxiv.org/abs/2410.03767" target="_blank">Hüyük et al. 2025</a>, <a href="https://arxiv.org/abs/2503.04556" target="_blank">Maasch et al. (2025)</a>). The 
+            resulting boolean vectors are treated as samples from observational and interventional distributions. These boolean vectors are then 
             used to compute PNS estimates.
           </p>
         </div>

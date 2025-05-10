@@ -223,12 +223,12 @@
                 with a <a href="#thanks">clinician</a> to loosely resemble real-world history and physical (H&P) notes. </li>
               <li><hi>Pre-sampled benchmark dataset.</hi> A static dataset sampled from the task generator, as a starting point for community benchmarking. 
                 Pre-sampled data can be found on <a href="https://huggingface.co/datasets/jmaasch/compositional_causal_reasoning"
-                target="_blank">Hugging Face</a>. Currently, pre-sampled data are available for the ClinicalNotes theme on simple causal graphs, 
+                target="_blank">Hugging Face</a>. Currently, pre-sampled data are available for the ClinicalNotes and FluVaccine themes on simple causal graphs, 
                 but we encourage users to increase the graphical complexity of the tasks they randomly sample. 
               </li>
             </ul>
-            <b>Quick start.</b> See this <a href="https://github.com/jmaasch/ccr/blob/main/demos/demo_clinical_notes.ipynb"
-            target="_blank">Jupyter Notebook demo</a> for a quick start on how to use our static dataset and task generators for evaluation, 
+            <b>Quick start.</b> See these <a href="https://github.com/jmaasch/ccr/tree/main/demos"
+            target="_blank">Jupyter Notebook demos</a> for a quick start on how to use our static dataset and task generators for evaluation, 
             including recommended performance metrics. Additional helpful code can be found in our <a href="https://github.com/jmaasch/ccr"
             target="_blank">GitHub repository</a>. 
             <br><br>
@@ -463,8 +463,8 @@
             target="_blank">Gonzalez and Nori 2024</a>, <a href="https://arxiv.org/abs/2410.03767" target="_blank">Hüyük et al. 2025</a>). Series of yes/no questions are submitted to the LM, 
             and the natural language responses are converted to their corresponding boolean value (e.g., using another LM as an extracter; see  
             <a href="https://arxiv.org/abs/2410.03767" target="_blank">Hüyük et al. 2025</a>, <a href="https://arxiv.org/abs/2503.04556" target="_blank">Maasch et al. 2025</a>). The 
-            resulting boolean vectors are treated as samples from observational and interventional distributions. These boolean vectors are then 
-            used to compute PNS estimates.
+            resulting boolean vectors are treated as samples from observational and interventional distributions. These boolean vectors are then used to compute PNS estimates, or classic 
+            performance metrics such as F1 score, precision, and accuracy.
           </p>
           <br>
           <p align="center" style="text-align:center">

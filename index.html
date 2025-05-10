@@ -198,7 +198,7 @@
             evaluation methods. <a href="https://arxiv.org/abs/2503.04556" target="_blank">Maasch et al. 2025</a> consider both behaviors simultaneously, under the umbrella of <b>compositional causal reasoning (CCR)</b>: 
             the ability to infer how causal measures compose 
             and, equivalently, how causal quantities propagate 
-            through graphs. CCR.GB extends the theoretical foundations provided by <a href="https://arxiv.org/abs/2503.04556" target="_blank">Maasch et al. 2025</a> by introducing a practical dataset. 
+            through graphs. CCR.GB applies the theoretical foundations provided by <a href="https://arxiv.org/abs/2503.04556" target="_blank">Maasch et al. 2025</a> to introduce new community datasets. 
             CCR.GB provides a generative benchmark for measuring CCR at <b>all 
             three levels of Pearl's Causal Hierarchy</b>: (1) associational, (2) interventional, and (3) counterfactual.
           </p>
@@ -257,6 +257,7 @@
             <li><a href="#task_gen">CCR task generation</a></li>
             <li><a href="#data_sim">LMs as counterfactual data simulators</a></li>
             <li><a href="#metrics">Performance metrics</a></li>
+            <li><a href="#taxonomy">Taxonomy of reasoners</a></li>
             <li><a href="#complexity">How complex should the causal graph be?</a></li>
             <li><a href="#results">Preliminary results</a></li>
             <li><a href="#slides">Paper slides</a></li>
@@ -532,6 +533,36 @@
   </div>
 </div>
 </section>
+
+<!-- Procedure -->
+<section class="hero">
+  <div class="hero-body">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" id="taxonomy">Taxonomy of reasoners</h2>
+        <div class="content has-text-justified">
+          <p>
+            Through the lens of <i>compositional consistency</i> – the ability to reason that theoretically equivalent compositions are indeed 
+            equal – this evaluation framework is able to reveal a range of taxonomically distinct error patterns. Arising from the notions of external 
+            validity and internal consistency described above, <a href="https://arxiv.org/abs/2503.04556" target="_blank">Maasch et al. (2025)</a>
+             introduce a four-category taxonomy for compositional reasoning errors: valid-consistent, valid-inconsistent, invalid-consistent, and invalid-inconsistent. This taxonomy can 
+            be used to categorize model performance on CCR.GB tasks, providing insights for further error analysis. 
+            See <a href="https://arxiv.org/abs/2503.04556" target="_blank">Maasch et al. (2025)</a> for elaboration.
+          </p>
+          <p align="center" style="text-align:center">
+            <img style="vertical-align:middle" src='static/images/taxonomy.png' class="center" alt="taxonomy of reasoners" width="70%">
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+
 
 <!-- Procedure -->
 <section class="hero">

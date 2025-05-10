@@ -125,7 +125,7 @@
                     <span class="icon">
                       &#129303;
                     </span>
-                    <span>Paper</span>
+                    <span>HF Paper</span>
                   </a>
                   </span>
 
@@ -136,7 +136,7 @@
                     <span class="icon">
                       &#129303;
                     </span>
-                    <span>Dataset</span>
+                    <span>HF Dataset</span>
                   </a>
                   </span>
 
@@ -226,14 +226,14 @@
                 but we encourage users to increase the graphical complexity of the tasks they randomly sample. 
               </li>
             </ul>
-            <b>Quick start:</b> See this <a href="https://github.com/jmaasch/ccr/blob/main/demos/demo_clinical_notes.ipynb"
+            <b>Quick start.</b> See this <a href="https://github.com/jmaasch/ccr/blob/main/demos/demo_clinical_notes.ipynb"
             target="_blank">Jupyter Notebook demo</a> for a quick start on how to use our static dataset and task generators for evaluation, 
             including recommended performance metrics. Additional helpful code can be found in our <a href="https://github.com/jmaasch/ccr"
             target="_blank">GitHub repository</a>. 
             <br><br>
-            <b>Future directions:</b> CCR.GB is still under development. Future iterations will consider additional causal estimands and more complex task setups. 
+            <b>Future directions.</b> CCR.GB is still under development. Future iterations will consider additional causal estimands and more complex task setups. 
             <br><br>
-            <b>Key words:</b> <i>causal reasoning, compositional reasoning, graphical reasoning, clinical reasoning</i>
+            <b>Key words.</b> <i>causal reasoning, compositional reasoning, graphical reasoning, clinical reasoning</i>
           </p>
         </div>
       </div>
@@ -256,6 +256,7 @@
             <li><a href="#task_gen">CCR task generation</a></li>
             <li><a href="#data_sim">LMs as counterfactual data simulators</a></li>
             <li><a href="#metrics">Performance metrics</a></li>
+            <li><a href="#complexity">How complex should the causal graph be?</a></li>
             <li><a href="#results">Preliminary results</a></li>
             <li><a href="#slides">Paper slides</a></li>
             <li><a href="#bibtex">How to cite this work (BibTeX)</a></li>
@@ -519,6 +520,33 @@
               each five times. Such relatively large sample sizes are needed to preserve the compositional properties of the PNS in the finite sample setting. Thus, CCR evaluation at the counterfactual level 
               is more expensive than (non-compositional) interventional and associational reasoning evaluation.
             </p>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Procedure -->
+<section class="hero">
+  <div class="hero-body">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" id="complexity">How complex should the causal graph be?</h2>
+        <div class="content has-text-justified">
+          <p>
+            As LMs become more capable, CCR.GB is more likely to be saturated. As shown in our <a href="#results">preliminary results</a> section and in 
+            <a href="https://arxiv.org/abs/2503.04556" target="_blank">Maasch et al. (2025)</a>, Llama models up to version 3.1 perform poorly even on very simple 
+            CCR tasks, GPT-4o does poorly without CoT plus demonstration, and o1 does well. For further context, we provide results from more recent reasoning models 
+            on a simple FluVaccine task. While DeepSeek R1 outperformed o4-mini and GPT-4o overall, no model showed perfect interventional reasoning even on this 
+            simple structure.
+            <p align="center" style="text-align:center">
+              <img style="vertical-align:middle" src='static/images/flu_results.png' class="center" alt="flu vaccine results" width="80%">
+            </p>
+            These results can be used as a baseline for deciding what level of graphical complexity might be appropriate for your models of interest. If testing on 
+            state-of-the-art reasoning models, we recommend that users opt for moderately-to-significantly more complex causal DAGs than this example.
           </p>
         </div>
       </div>
